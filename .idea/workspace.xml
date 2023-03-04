@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Lab5:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a4ae1a1-513d-4031-86f2-9ea3828b6c04" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/HumanBeing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/Mood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/WeaponType.java" afterDir="false" />
+    <list default="true" id="3a4ae1a1-513d-4031-86f2-9ea3828b6c04" name="Changes" comment="done">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Lab5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Classes/Colors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Classes/SaveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/CommandEater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/CommandPattern.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/RemoveByIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/HumanBeing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,25 +58,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ismir/IdeaProjects/TetianaFactorial&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,8 +89,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676055068923</updated>
-      <workItem from="1676055070299" duration="6121000" />
+      <workItem from="1676055070299" duration="7510000" />
+      <workItem from="1676364993798" duration="46000" />
+      <workItem from="1676401496222" duration="1419000" />
+      <workItem from="1676745666075" duration="4667000" />
+      <workItem from="1677576966598" duration="20000" />
+      <workItem from="1677577052444" duration="2436000" />
+      <workItem from="1677696344144" duration="8563000" />
+      <workItem from="1677705302820" duration="1533000" />
+      <workItem from="1677746295978" duration="1655000" />
+      <workItem from="1677760071430" duration="722000" />
+      <workItem from="1677785169185" duration="12244000" />
+      <workItem from="1677921617124" duration="7221000" />
     </task>
+    <task id="LOCAL-00001" summary="done">
+      <created>1676062337151</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676062337151</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,5 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
 </project>

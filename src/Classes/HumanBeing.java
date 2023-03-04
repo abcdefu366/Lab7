@@ -1,9 +1,10 @@
 package Classes;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class HumanBeing {
-    private Integer id;
+    private Long id;
     private String name;
     private Coordinates coordinates;
     private java.util.Date creationDate;
@@ -14,16 +15,11 @@ public class HumanBeing {
     private Mood mood;
     private Car car;
 
-    public void setId(Integer id) {
-        if (id == null || id <= 0) {
-            throw new IllegalArgumentException("id не может быть null, Значение id должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически");
-        }
-        else {
-            this.id = id;
-        }
+    public Long getId() {
+        return id;
     }
     public void setName(String name) {
-        if (name.equals(null)) {
+        if (name == null) {
             throw new IllegalArgumentException("name не может быть null, Строка не может быть пустой");
         }
         else {
@@ -31,21 +27,11 @@ public class HumanBeing {
         }
     }
     public void setCoordinates(Coordinates coordinates) {
-        Coordinates coordinates1 = new Coordinates(0, 0);
-        if (coordinates.equals(coordinates1)) {
+        if (coordinates == null) {
             throw new IllegalArgumentException("coordinates не может быть null");
         }
         else {
             this.coordinates = coordinates;
-        }
-    }
-
-    public void setCreationDate(Date creationDate) {
-        if (creationDate == null) {
-            throw new IllegalArgumentException("creationDate не может быть null, Значение этого поля должно генерироваться автоматически");
-        }
-        else {
-            this.creationDate =   creationDate;
         }
     }
     public void setRealHero(Boolean realHero) {
@@ -91,15 +77,55 @@ public class HumanBeing {
             this.car = car;
         }
     }
-    public HumanBeing(Integer id, String name, Coordinates coordinates, Date creationDate, Boolean realHero, Boolean hasToothpick, Integer impactSpeed, WeaponType weaponType, Mood mood, Car car) {
-        setId(id);
+    @Override
+    public String toString() {
+        return String.format(Colors.GREEN + "HumanBeing:\n" + Colors.RESET +
+                Colors.WHITE + "Id - " + Colors.RED + id +
+                Colors.WHITE + " Name - " + Colors.RED + name +
+                Colors.WHITE + " Coordinates " + Colors.RED + coordinates +
+                Colors.WHITE + " Creation date - " + Colors.RED + creationDate +
+                Colors.WHITE + " RealHero - " + Colors.RED + realHero +
+                Colors.WHITE + " HasToothpick - " + Colors.RED + hasToothpick +
+                Colors.WHITE + " ImpactSpeed = " + Colors.RED + impactSpeed +
+                Colors.WHITE + " WeaponType - " + Colors.RED + weaponType +
+                Colors.WHITE + " Mood - " + Colors.RED + mood +
+                Colors.WHITE + " Car - " + Colors.RED + car + Colors.RESET);
+    }
+    public HumanBeing(String name, Coordinates coordinates, Boolean realHero, Boolean hasToothpick, Integer impactSpeed, WeaponType weaponType, Mood mood, Car car) {
         setName(name);
         setCoordinates(coordinates);
-        setCreationDate(creationDate);
         setRealHero(realHero);
         setHasToothpick(hasToothpick);
+        setImpactSpeed(impactSpeed);
         setWeaponType(weaponType);
         setMood(mood);
         setCar(car);
+        creationDate = new Date();
+        UUID forId = UUID.randomUUID();
+        id = Math.abs(forId.getMostSignificantBits());
+    }
+    public String getName() {
+        return name;
+    }
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+    public Boolean getRealHero() {
+        return realHero;
+    }
+    public Boolean getHasToothpick() {
+        return hasToothpick;
+    }
+    public Integer getImpactSpeed() {
+        return impactSpeed;
+    }
+    public WeaponType getWeaponType() {
+        return weaponType;
+    }
+    public Mood getMood() {
+        return mood;
+    }
+    public Car getCar() {
+        return car;
     }
 }
