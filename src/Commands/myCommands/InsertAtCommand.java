@@ -4,14 +4,14 @@ import Classes.*;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AddCommand implements CommandPattern {
+public class InsertAtCommand implements CommandPattern {
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {
             try {
+                Integer index = Integer.parseInt(CommandEater.getSplit()[1]);
                 Scanner scanner = new Scanner(System.in);
                 String name = scanner.nextLine();
                 Long x = Long.parseLong(scanner.nextLine());
@@ -24,10 +24,14 @@ public class AddCommand implements CommandPattern {
                 Integer intMood = Integer.parseInt(scanner.nextLine());
                 Mood mood = Mood.getMood(intMood);
                 Boolean cool = Boolean.parseBoolean(scanner.nextLine());
-                HumanBeingCollection.getHumanBeings().add(new HumanBeing(name, new Coordinates(x, y), realHero, hasToothpick, speed, weaponType, mood, new Car(cool)));
-                System.out.println("Новый элемент добавлен в коллекцию");
+                HumanBeing humanBeing = new HumanBeing(name, new Coordinates(x, y), realHero, hasToothpick, speed, weaponType, mood, new Car(cool));
+                HumanBeingCollection.getHumanBeings().add(index, humanBeing);
+                System.out.println("Новый элемент добавлен на позицию под номером: " + index);
             }
-            catch (Exception e) {} //exception???  No line found
+            catch (Exception e) {}
+        }
+        else {
+            System.out.println("Некорректная команда");
         }
     }
 }

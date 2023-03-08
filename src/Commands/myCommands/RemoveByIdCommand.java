@@ -16,6 +16,7 @@ public class RemoveByIdCommand implements CommandPattern {
                     if (humanBeing.getId().equals(id)) {
                         HumanBeingCollection.getHumanBeings().remove(humanBeing);
                         isHumanBeingDelete = true;
+                        System.out.println("Элемент с Id: " + id + " удалён из коллекции");
                     }
                 }
                 if (!isHumanBeingDelete) {

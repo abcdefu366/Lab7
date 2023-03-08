@@ -10,26 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a4ae1a1-513d-4031-86f2-9ea3828b6c04" name="Changes" comment="done">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Lab5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/Colors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/SaveCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/CommandEater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/CommandPattern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/HelpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/RemoveByIdCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ShowCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/InsertAtCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/PrintFieldAscendingImpactSpeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/PrintFieldDescendingCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/SortCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/HumanBeing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Mood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Mood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/WeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/WeaponType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/CommandEater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/CommandEater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +96,11 @@
       <workItem from="1677746295978" duration="1655000" />
       <workItem from="1677760071430" duration="722000" />
       <workItem from="1677785169185" duration="12244000" />
-      <workItem from="1677921617124" duration="7221000" />
+      <workItem from="1677921617124" duration="7657000" />
+      <workItem from="1677932086214" duration="3888000" />
+      <workItem from="1678200487475" duration="7443000" />
+      <workItem from="1678229868598" duration="4562000" />
+      <workItem from="1678234498514" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1676062337151</created>
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676062337151</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="done">
+      <created>1677930680182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677930680182</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

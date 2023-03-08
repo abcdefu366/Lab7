@@ -1,10 +1,12 @@
 package Classes;
 
 import java.io.*;
+import java.util.Date;
 import java.util.LinkedList;
 
 public class HumanBeingCollection {
     private static LinkedList<HumanBeing> humanBeings = new LinkedList<>();
+    private static Date dateOfInitialization = new Date();
     public static void readerFromFile(String path) {
         String line = "";
         try {
@@ -22,6 +24,11 @@ public class HumanBeingCollection {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public static void getInfo() {
+        System.out.println("Тип коллекции: " + humanBeings.getClass().getTypeName());
+        System.out.println("Дата инициализации: " + dateOfInitialization);
+        System.out.println("Количество элементов: " + humanBeings.size());
     }
     public static LinkedList<HumanBeing> getHumanBeings() {
         return humanBeings;

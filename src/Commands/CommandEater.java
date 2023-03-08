@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import Classes.SaveCommand;
+import Commands.myCommands.SaveCommand;
 import Commands.myCommands.*;
 
 public class CommandEater {
@@ -32,6 +32,11 @@ public class CommandEater {
         commandPatternHashMap.put("clear", new ClearCommand());
         commandPatternHashMap.put("update", new UpdateIdCommand());
         commandPatternHashMap.put("save", new SaveCommand());
+        commandPatternHashMap.put("sort", new SortCommand());
+        commandPatternHashMap.put("info", new InfoCommand());
+        commandPatternHashMap.put("insert_at", new InsertAtCommand());
+        commandPatternHashMap.put("print_field_ascending_impact_speed", new PrintFieldAscendingImpactSpeed());
+        commandPatternHashMap.put("print_field_descending_car", new PrintFieldDescendingCar());
         while (getIsProgramRunning()) {
             split = scanner.nextLine().split(" ");
             CommandPattern commandPattern = commandPatternHashMap.get(split[0]);

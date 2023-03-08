@@ -1,5 +1,7 @@
-package Classes;
+package Commands.myCommands;
 
+import Classes.HumanBeing;
+import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
