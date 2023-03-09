@@ -129,6 +129,7 @@ public class HumanBeing {
     public Car getCar() {
         return car;
     }
+
     public class SortByName implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {

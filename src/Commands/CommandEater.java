@@ -35,8 +35,10 @@ public class CommandEater {
         commandPatternHashMap.put("sort", new SortCommand());
         commandPatternHashMap.put("info", new InfoCommand());
         commandPatternHashMap.put("insert_at", new InsertAtCommand());
-        commandPatternHashMap.put("print_field_ascending_impact_speed", new PrintFieldAscendingImpactSpeed());
-        commandPatternHashMap.put("print_field_descending_car", new PrintFieldDescendingCar());
+        commandPatternHashMap.put("print_field_ascending_impact_speed", new PrintFieldAscendingImpactSpeedCommand());
+        commandPatternHashMap.put("print_field_descending_car", new PrintFieldDescendingCarCommand());
+        commandPatternHashMap.put("print_unique_mood", new PrintUniqueMoodCommand());
+        commandPatternHashMap.put("add_if_max", new AddIfMaxCommand());
         while (getIsProgramRunning()) {
             split = scanner.nextLine().split(" ");
             CommandPattern commandPattern = commandPatternHashMap.get(split[0]);
