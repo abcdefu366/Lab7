@@ -6,6 +6,7 @@ import Commands.CommandEater;
 import Commands.CommandPattern;
 
 public class RemoveByIdCommand implements CommandPattern {
+    /** Метод, удаляющий элемент из коллекции по его id */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

@@ -7,6 +7,7 @@ import Commands.CommandPattern;
 import java.util.Scanner;
 
 public class UpdateIdCommand implements CommandPattern {
+    /** Метод, обновляющий значение элемента коллекции, id которого равен заданному */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

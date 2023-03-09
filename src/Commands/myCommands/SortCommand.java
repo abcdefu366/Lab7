@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class SortCommand implements CommandPattern {
+    /** Метод, сортирующий коллекцию в естественном порядке по заданному полю */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

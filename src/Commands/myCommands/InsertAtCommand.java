@@ -7,6 +7,7 @@ import Commands.CommandPattern;
 import java.util.Scanner;
 
 public class InsertAtCommand implements CommandPattern {
+    /** Метод, добавляющий новый элемент в заданную позицию */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

@@ -5,6 +5,7 @@ import Commands.CommandPattern;
 
 public class HelpCommand implements CommandPattern {
     private String description = "help : вывести справку по доступным командам";
+    /** Метод, выводящий справку по доступным командам */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

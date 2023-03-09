@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AddCommand implements CommandPattern {
+    /** Метод, добавляющий в коллекцию нового HumanBeing */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

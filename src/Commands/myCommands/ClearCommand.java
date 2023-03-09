@@ -5,6 +5,7 @@ import Commands.CommandEater;
 import Commands.CommandPattern;
 
 public class ClearCommand implements CommandPattern {
+    /** Метод, очищающий коллекцию */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

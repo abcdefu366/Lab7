@@ -8,6 +8,7 @@ import Commands.CommandPattern;
 import java.io.*;
 
 public class SaveCommand implements CommandPattern {
+    /** Метод, сохраняющий коллекцию в файл */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {

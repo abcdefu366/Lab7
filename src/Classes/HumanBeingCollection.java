@@ -7,6 +7,7 @@ import java.util.LinkedList;
 public class HumanBeingCollection {
     private static LinkedList<HumanBeing> humanBeings = new LinkedList<>();
     private static Date dateOfInitialization = new Date();
+    /** Метод для добавления HumanBeing из файла в коллекцию */
     public static void readerFromFile(String path) {
         String line = "";
         try {
@@ -25,6 +26,7 @@ public class HumanBeingCollection {
             throw new RuntimeException(e);
         }
     }
+    /** Метод, выводящий информацию о коллекции */
     public static void getInfo() {
         System.out.println("Тип коллекции: " + humanBeings.getClass().getTypeName());
         System.out.println("Дата инициализации: " + dateOfInitialization);

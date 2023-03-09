@@ -6,6 +6,7 @@ import Commands.CommandEater;
 import Commands.CommandPattern;
 
 public class ShowCommand implements CommandPattern {
+    /** Метод, выводящий все элементы коллекции */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {
