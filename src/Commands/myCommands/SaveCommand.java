@@ -11,7 +11,7 @@ public class SaveCommand implements CommandPattern {
     /** Метод, сохраняющий коллекцию в файл */
     @Override
     public void execute() {
-        if (CommandEater.getIsProgramRunning()) {
+        if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             try {
                 OutputStream os = new FileOutputStream(CommandEater.getFileName());
                 Writer osr = new OutputStreamWriter(os);
@@ -25,9 +25,10 @@ public class SaveCommand implements CommandPattern {
                 System.out.println("Файл с таким именем не найден");
             } catch (IOException e) {
                 e.printStackTrace();
-                //throw new RuntimeException(e);
             }
         }
-        else {} //дописать
+        else {
+            System.out.println("Такое количество параметров невозможно для этой команды");
+        }
     }
 }

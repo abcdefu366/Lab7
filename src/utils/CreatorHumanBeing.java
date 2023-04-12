@@ -1,0 +1,94 @@
+package utils;
+
+import Classes.*;
+import utils.readers.Reader;
+
+public class CreatorHumanBeing {
+    private Reader reader;
+
+    public CreatorHumanBeing(Reader reader) {
+        this.reader = reader;
+    }
+
+    public HumanBeing create(){
+        System.out.println("Введите значение имени");
+        String possibleField = reader.getNewLine();
+        while(possibleField.equals("") || possibleField == "") {
+            System.out.println("name не может быть null, Строка не может быть пустой");
+            possibleField = reader.getNewLine();
+        }
+        String name = possibleField;
+        System.out.println("Введите значение координаты x");
+        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))){
+            System.out.println("Неверный ввод данных, координата x должна быть целым числом");
+        }
+        Long x = Long.parseLong(possibleField);
+        System.out.println("Введите значение координаты y");
+        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))){
+            System.out.println("Неверный ввод данных, координата y должна быть целым числом");
+        }
+        Long y = Long.parseLong(possibleField);
+        System.out.println("Введите значение является ли он настоящим героем (Введите true, если да. По умолчанию false)");
+        Boolean realHero = Boolean.parseBoolean(reader.getNewLine());
+        System.out.println("Введите значение ковыряется ли он в зубах (Введите true, если да. По умолчанию false)");
+        Boolean hasToothpick = Boolean.parseBoolean(reader.getNewLine());
+        System.out.println("Введите значение скорости");
+        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))){
+            System.out.println("Неверный ввод данных, скорость должна быть целым числом");
+        }
+        Integer speed = Integer.parseInt(possibleField);
+        System.out.println("Введите значение числа WeaponType");
+        System.out.println("1 или pistol для PISTOL, 2 или KNIFE для KNIFE, 3 или machine_gun для MACHINE_GUN");
+        String[] validInputsWT = {"1", "2", "3", "pistol", "knife", "machine_gun"};
+        boolean isValidWT = false;
+        while(!(isValidWT)) {
+            possibleField = reader.getNewLine().toLowerCase();
+            for (String validInput : validInputsWT) {
+                if (possibleField.equals(validInput)) {
+                    isValidWT = true;
+                    break;
+                }
+            }
+            if (!(isValidWT)) {
+                System.out.println("Введенная строка не является допустимой.");
+            }
+            possibleField = possibleField.toLowerCase();
+            switch (possibleField) {
+                case "1", "pistol": possibleField = "1"; break;
+                case "2", "knife": possibleField = "2"; break;
+                case "3", "machine_gun": possibleField = "3"; break;
+                default: break;
+            }
+        }
+        Integer intWeaponType = Integer.parseInt(possibleField);
+        WeaponType weaponType = WeaponType.getWeaponType(intWeaponType);
+        System.out.println("Введите значение числа Mood");
+        System.out.println("1 или sadness для SADNESS, 2 или sorrow для SORROW, 3 или longing для LONGING");
+        String[] validInputsM = {"1", "2", "3", "sorrow", "sadness", "longing"};
+        boolean isValidM = false;
+        while(!(isValidM)) {
+            possibleField = reader.getNewLine().toLowerCase();
+            for (String validInput : validInputsM) {
+                if (possibleField.equals(validInput)) {
+                    isValidM = true;
+                    break;
+                }
+            }
+            if (!(isValidM)) {
+                System.out.println("Введенная строка не является допустимой.");
+            }
+            possibleField = possibleField.toLowerCase();
+            switch (possibleField) {
+                case "1", "sadness": possibleField = "1"; break;
+                case "2", "sorrow": possibleField = "2"; break;
+                case "3", "longing": possibleField = "3"; break;
+                default: break;
+            }
+        }
+        Integer intMood = Integer.parseInt(possibleField);
+        Mood mood = Mood.getMood(intMood);
+        System.out.println("Введите значение крутая ли машина (Введите true, если да. По умолчанию false)");
+        Boolean cool = Boolean.parseBoolean(reader.getNewLine());
+        return (new HumanBeing(name, new Coordinates(x, y), realHero, hasToothpick, speed, weaponType, mood, new Car(cool)));
+    }
+}

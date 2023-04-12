@@ -35,4 +35,8 @@ public class HumanBeingCollection {
     public static LinkedList<HumanBeing> getHumanBeings() {
         return humanBeings;
     }
+
+    public static void add(HumanBeing humanBeing){
+        humanBeings.add(humanBeing);
+    }
 }

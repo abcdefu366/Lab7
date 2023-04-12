@@ -9,7 +9,7 @@ public class ShowCommand implements CommandPattern {
     /** Метод, выводящий все элементы коллекции */
     @Override
     public void execute() {
-        if (CommandEater.getIsProgramRunning()) {
+        if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             if (HumanBeingCollection.getHumanBeings().isEmpty()) {
                 System.out.println("Коллекция не содержит данных");
             }
@@ -20,7 +20,7 @@ public class ShowCommand implements CommandPattern {
             }
         }
         else {
-            System.out.println("Некорректная команда");
+            System.out.println("Такое количество параметров невозможно для этой команды");
         }
     }
 }

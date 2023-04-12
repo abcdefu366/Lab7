@@ -3,32 +3,30 @@ package Commands.myCommands;
 import Classes.*;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import utils.CreatorHumanBeing;
+import utils.readers.Reader;
 
 public class AddCommand implements CommandPattern {
+
+    private Reader reader;
+
+    public AddCommand(Reader reader) {
+        this.reader = reader;
+    }
+
     /** Метод, добавляющий в коллекцию нового HumanBeing */
+
+
     @Override
     public void execute() {
-        if (CommandEater.getIsProgramRunning()) {
-            try {
-                Scanner scanner = new Scanner(System.in);
-                String name = scanner.nextLine();
-                Long x = Long.parseLong(scanner.nextLine());
-                Long y = Long.parseLong(scanner.nextLine());
-                Boolean realHero = Boolean.parseBoolean(scanner.nextLine());
-                Boolean hasToothpick = Boolean.parseBoolean(scanner.nextLine());
-                Integer speed = Integer.parseInt(scanner.nextLine());
-                Integer intWeaponType = Integer.parseInt(scanner.nextLine());
-                WeaponType weaponType = WeaponType.getWeaponType(intWeaponType);
-                Integer intMood = Integer.parseInt(scanner.nextLine());
-                Mood mood = Mood.getMood(intMood);
-                Boolean cool = Boolean.parseBoolean(scanner.nextLine());
-                HumanBeingCollection.getHumanBeings().add(new HumanBeing(name, new Coordinates(x, y), realHero, hasToothpick, speed, weaponType, mood, new Car(cool)));
-                System.out.println("Новый элемент добавлен в коллекцию");
-            }
-            catch (Exception e) {} //exception???  No line found
+        if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
+            CreatorHumanBeing creatorHumanBeing = new CreatorHumanBeing(reader);
+            HumanBeing humanBeing = creatorHumanBeing.create();
+            HumanBeingCollection.add(humanBeing);
+            System.out.println("Новый объект был успешно добавлен в коллекцию");
+        }
+        else {
+            System.out.println("Такое количество параметров невозможно для этой команды");
         }
     }
 }

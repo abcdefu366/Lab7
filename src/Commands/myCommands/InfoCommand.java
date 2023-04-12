@@ -5,14 +5,13 @@ import Commands.CommandEater;
 import Commands.CommandPattern;
 
 public class InfoCommand implements CommandPattern {
-    /** Метод, выводящий информацию о коллекции */
     @Override
     public void execute() {
-        if (CommandEater.getIsProgramRunning()) {
+        if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             HumanBeingCollection.getInfo();
         }
         else {
-            System.out.println("Некорректная команда");
+            System.out.println("Такое количество параметров невозможно для этой команды");
         }
     }
 }

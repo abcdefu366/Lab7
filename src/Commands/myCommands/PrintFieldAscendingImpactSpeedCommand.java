@@ -11,7 +11,7 @@ import java.util.LinkedList;
 public class PrintFieldAscendingImpactSpeedCommand implements CommandPattern {
     @Override
     public void execute() {
-        if (CommandEater.getIsProgramRunning()) {
+        if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             LinkedList<HumanBeing> humanBeingLinkedList = new LinkedList<>(HumanBeingCollection.getHumanBeings());
             Collections.sort(humanBeingLinkedList, new HumanBeing.SortByImpactSpeed());
             for (HumanBeing humanBeing : humanBeingLinkedList) {
@@ -20,7 +20,7 @@ public class PrintFieldAscendingImpactSpeedCommand implements CommandPattern {
             humanBeingLinkedList.clear();
         }
         else {
-            System.out.println("Некорректная команда");
+            System.out.println("Такое количество параметров невозможно для этой команды");
         }
     }
 }

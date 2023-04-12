@@ -8,7 +8,7 @@ public class HelpCommand implements CommandPattern {
     /** Метод, выводящий справку по доступным командам */
     @Override
     public void execute() {
-        if (CommandEater.getIsProgramRunning()) {
+        if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             System.out.println("""
                 help : вывести справку по доступным командам
                 info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
@@ -28,7 +28,7 @@ public class HelpCommand implements CommandPattern {
                 print_field_descending_car : вывести значения поля car всех элементов в порядке убывания""");
         }
         else {
-            System.out.println("Некорректная команда");
+            System.out.println("Такое количество параметров невозможно для этой команды");
         }
     }
     public String getDescription() {
