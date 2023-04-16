@@ -1,5 +1,6 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
@@ -14,11 +15,11 @@ public class RemoveByIdCommand implements CommandPattern {
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {
-            if (CommandEater.getSplit().length < 2 || !(CommandEater.getSplit()[1].matches("^[+-]?\\d+$"))) {
-                System.out.println("Введён некорректный id");
-            }
             if (CommandEater.getSplit().length > 2) {
-                System.out.println("Такое количество параметров невозможно для этой команды");
+                System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
+            }
+            if (CommandEater.getSplit().length < 2 || !(CommandEater.getSplit()[1].matches("^[+-]?\\d+$"))) {
+                System.out.println(Colors.YELLOW + "Введён некорректный id" + Colors.RESET);
             }
             else {
                 Long id = Long.parseLong(CommandEater.getSplit()[1]);
@@ -28,19 +29,16 @@ public class RemoveByIdCommand implements CommandPattern {
                         if (humanBeing.getId().equals(id)) {
                             HumanBeingCollection.getHumanBeings().remove(humanBeing);
                             isHumanBeingDelete = true;
-                            System.out.println("Элемент с Id: " + id + " удалён из коллекции");
+                            System.out.println(Colors.BLUE + "Элемент с Id:" + Colors.RESET + " " + id + " " + Colors.BLUE + "удалён из коллекции" + Colors.RESET);
                         }
                     }
                     if (!isHumanBeingDelete) {
-                        System.out.println("Такой HumanBeing не найден в коллекции");
+                        System.out.println(Colors.YELLOW + "Такой HumanBeing не найден в коллекции" + Colors.RESET);
                     }
                 } else {
-                    System.out.println("Коллекция не содержит данных");
+                    System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
                 }
             }
-        }
-        else {
-            System.out.println("Некорректная команда");
         }
     }
 }

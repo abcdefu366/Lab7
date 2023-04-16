@@ -17,7 +17,6 @@ public class HumanBeingCollection {
                 try {
                     humanBeings.add(new HumanBeing(data[0], new Coordinates(Long.parseLong(data[1]), Long.parseLong(data[2])), Boolean.parseBoolean(data[3]), Boolean.parseBoolean(data[4]), Integer.parseInt(data[5]), WeaponType.valueOf(data[6]), Mood.valueOf(data[7]), new Car(Boolean.parseBoolean(data[8]))));
                 } catch (Exception ignored) {}
-                //catch (ArrayIndexOutOfBoundsException ignored) {}
             }
             br.close();
         } catch (FileNotFoundException e) {

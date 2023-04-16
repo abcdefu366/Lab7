@@ -19,8 +19,8 @@ public class CreatorHumanBeing {
         }
         String name = possibleField;
         System.out.println("Введите значение координаты x");
-        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))){
-            System.out.println("Неверный ввод данных, координата x должна быть целым числом");
+        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$")) || Long.parseLong(possibleField) > 357) {
+            System.out.println("Неверный ввод данных, координата x должна быть целым числом. Максимальное значение x = 357");
         }
         Long x = Long.parseLong(possibleField);
         System.out.println("Введите значение координаты y");

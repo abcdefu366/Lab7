@@ -1,10 +1,10 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-
 import java.io.*;
 
 public class SaveCommand implements CommandPattern {
@@ -20,15 +20,15 @@ public class SaveCommand implements CommandPattern {
                 }
                 osr.flush();
                 osr.close();
-                System.out.println("Коллекция сохранена в файл");
+                System.out.println(Colors.BLUE + "Коллекция сохранена в файл" + Colors.RESET);
             } catch (FileNotFoundException e) {
-                System.out.println("Файл с таким именем не найден");
+                System.out.println(Colors.YELLOW + "Файл с таким именем не найден" + Colors.RESET);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         else {
-            System.out.println("Такое количество параметров невозможно для этой команды");
+            System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
         }
     }
 }

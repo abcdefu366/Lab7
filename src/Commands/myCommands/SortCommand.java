@@ -1,23 +1,24 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
+import javax.crypto.Cipher;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class SortCommand implements CommandPattern {
     /** Метод, сортирующий коллекцию в естественном порядке по заданному полю */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {
-            if (CommandEater.getSplit().length < 2 || !(CommandEater.getSplit()[1].matches("[1-9]"))) {
-                System.out.println("Введён некорректный параметр сортировки");
-            }
             if (CommandEater.getSplit().length > 2) {
-                System.out.println("Такое количество параметров невозможно для этой команды");
+                System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
+            }
+            if (CommandEater.getSplit().length < 2 || !(CommandEater.getSplit()[1].matches("[1-9]"))) {
+                System.out.println(Colors.YELLOW + "Введён некорректный параметр сортировки" + Colors.RESET);
             }
             else {
                 Integer parameter = Integer.parseInt(CommandEater.getSplit()[1]);
@@ -48,7 +49,7 @@ public class SortCommand implements CommandPattern {
                 if (parameter.equals(9)) {
                     Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByCar());
                 }
-                System.out.println("Коллекция успешно отсортирована");
+                System.out.println(Colors.BLUE + "Коллекция успешно отсортирована" + Colors.RESET);
             }
         }
     }

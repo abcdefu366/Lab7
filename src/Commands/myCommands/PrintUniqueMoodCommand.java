@@ -1,11 +1,11 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Classes.Mood;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +23,7 @@ public class PrintUniqueMoodCommand implements CommandPattern {
             set.clear();
         }
         else {
-            System.out.println("Такое количество параметров невозможно для этой команды");
+            System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
         }
     }
 }

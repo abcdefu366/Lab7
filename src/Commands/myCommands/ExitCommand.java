@@ -1,5 +1,6 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
@@ -11,7 +12,7 @@ public class ExitCommand implements CommandPattern {
             CommandEater.setIsProgramRunning(false);
         }
         else {
-            System.out.println("Такое количество параметров невозможно для этой команды");
+            System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
         }
     }
 }

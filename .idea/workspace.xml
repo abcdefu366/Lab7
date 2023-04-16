@@ -10,30 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a4ae1a1-513d-4031-86f2-9ea3828b6c04" name="Changes" comment="done">
-      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExecuteScriptCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/CreatorHumanBeing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/readers/NameReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/readers/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/readers/ReaderFromConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/readers/ReaderFromFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/readers/ReaderManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/myCommands/UpdateCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Lab5_jar/Lab5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Lab5_jar/Lab5.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Lab5_jar/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Lab5_jar/data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Classes/HumanBeingCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Classes/HumanBeingCollection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/CommandEater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/CommandEater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/AddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/AddCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/ClearCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/ClearCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/ExitCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/ExitCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/HelpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/HelpCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/RemoveByIdCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/RemoveByIdCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/ShowCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/ShowCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/UpdateIdCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/UpdateIdCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab5/Commands/myCommands/UpdateIdCommand.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/CommandEater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/CommandEater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddIfMaxCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExecuteScriptCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExitCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/HelpCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/InfoCommand.java" afterDir="false" />
@@ -45,7 +37,8 @@
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/SaveCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ShowCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/SortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/SortCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/UpdateIdCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/CreatorHumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/CreatorHumanBeing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +127,8 @@
       <workItem from="1681063798133" duration="7629000" />
       <workItem from="1681141803232" duration="469000" />
       <workItem from="1681203059448" duration="3898000" />
-      <workItem from="1681310939191" duration="3674000" />
+      <workItem from="1681310939191" duration="4497000" />
+      <workItem from="1681666238359" duration="5740000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1676062337151</created>
@@ -157,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678234862526</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="done">
+      <created>1681314924020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681314924020</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

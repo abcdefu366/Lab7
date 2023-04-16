@@ -2,13 +2,12 @@ package Commands;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
+import Classes.Colors;
 import Commands.myCommands.SaveCommand;
 import Commands.myCommands.*;
 import utils.readers.Reader;
 import utils.readers.ReaderFromConsole;
-import utils.readers.ReaderFromFile;
 
 public class CommandEater {
 
@@ -40,7 +39,7 @@ public class CommandEater {
             }
             split = request.split(" ");
             CommandPattern commandPattern = commandPatternHashMap.get(split[0]);
-            if(commandPattern == null) System.out.println("Введена несуществующая команда");
+            if(commandPattern == null) System.out.println(Colors.BLACK + "Введена несуществующая команда" + Colors.RESET);
             else commandPattern.execute();
         }
     }
@@ -52,7 +51,7 @@ public class CommandEater {
         commandPatternHashMap.put("add", new AddCommand(reader));
         commandPatternHashMap.put("remove_by_id", new RemoveByIdCommand(reader));
         commandPatternHashMap.put("clear", new ClearCommand());
-        commandPatternHashMap.put("update", new UpdateIdCommand());
+        commandPatternHashMap.put("update", new UpdateCommand());
         commandPatternHashMap.put("save", new SaveCommand());
         commandPatternHashMap.put("sort", new SortCommand());
         commandPatternHashMap.put("info", new InfoCommand());

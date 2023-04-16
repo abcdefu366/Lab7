@@ -1,5 +1,6 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
@@ -11,7 +12,7 @@ public class ShowCommand implements CommandPattern {
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             if (HumanBeingCollection.getHumanBeings().isEmpty()) {
-                System.out.println("Коллекция не содержит данных");
+                System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
             else {
                 for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
@@ -20,7 +21,7 @@ public class ShowCommand implements CommandPattern {
             }
         }
         else {
-            System.out.println("Такое количество параметров невозможно для этой команды");
+            System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
         }
     }
 }

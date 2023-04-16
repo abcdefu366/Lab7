@@ -1,5 +1,6 @@
 package Commands.myCommands;
 
+import Classes.Colors;
 import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
@@ -20,7 +21,7 @@ public class PrintFieldAscendingImpactSpeedCommand implements CommandPattern {
             humanBeingLinkedList.clear();
         }
         else {
-            System.out.println("Такое количество параметров невозможно для этой команды");
+            System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
         }
     }
 }

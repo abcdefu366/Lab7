@@ -23,10 +23,10 @@ public class AddCommand implements CommandPattern {
             CreatorHumanBeing creatorHumanBeing = new CreatorHumanBeing(reader);
             HumanBeing humanBeing = creatorHumanBeing.create();
             HumanBeingCollection.add(humanBeing);
-            System.out.println("Новый объект был успешно добавлен в коллекцию");
+            System.out.println(Colors.BLUE + "Новый объект был успешно добавлен в коллекцию" + Colors.RESET);
         }
         else {
-            System.out.println("Такое количество параметров невозможно для этой команды");
+            System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
         }
     }
 }
