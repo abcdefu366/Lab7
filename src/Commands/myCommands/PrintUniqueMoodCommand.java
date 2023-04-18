@@ -14,13 +14,18 @@ public class PrintUniqueMoodCommand implements CommandPattern {
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
             Set<Mood> set = new HashSet();
-            for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
-                set.add(humanBeing.getMood());
+            if (HumanBeingCollection.getHumanBeings().isEmpty()) {
+                System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
-            for (Mood mood : set) {
-                System.out.println(mood);
+            else {
+                for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
+                    set.add(humanBeing.getMood());
+                }
+                for (Mood mood : set) {
+                    System.out.println(Colors.BLACK + mood + Colors.RESET);
+                }
+                set.clear();
             }
-            set.clear();
         }
         else {
             System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);

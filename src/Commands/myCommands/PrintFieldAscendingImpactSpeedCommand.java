@@ -13,12 +13,17 @@ public class PrintFieldAscendingImpactSpeedCommand implements CommandPattern {
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
-            LinkedList<HumanBeing> humanBeingLinkedList = new LinkedList<>(HumanBeingCollection.getHumanBeings());
-            Collections.sort(humanBeingLinkedList, new HumanBeing.SortByImpactSpeed());
-            for (HumanBeing humanBeing : humanBeingLinkedList) {
-                System.out.println(humanBeing.getImpactSpeed());
+            if (HumanBeingCollection.getHumanBeings().isEmpty()) {
+                System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
-            humanBeingLinkedList.clear();
+            else {
+                LinkedList<HumanBeing> humanBeingLinkedList = new LinkedList<>(HumanBeingCollection.getHumanBeings());
+                Collections.sort(humanBeingLinkedList, new HumanBeing.SortByImpactSpeed());
+                for (HumanBeing humanBeing : humanBeingLinkedList) {
+                    System.out.println(Colors.BLACK + humanBeing.getImpactSpeed() + Colors.RESET);
+                }
+                humanBeingLinkedList.clear();
+            }
         }
         else {
             System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);

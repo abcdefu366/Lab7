@@ -16,7 +16,7 @@ public class SaveCommand implements CommandPattern {
                 OutputStream os = new FileOutputStream(CommandEater.getFileName());
                 Writer osr = new OutputStreamWriter(os);
                 for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
-                    osr.write(humanBeing.getName() + "," + humanBeing.getCoordinates().getX() + "," + humanBeing.getCoordinates().getY() + "," + humanBeing.getRealHero() + "," + humanBeing.getHasToothpick() + "," + humanBeing.getImpactSpeed() + "," + humanBeing.getWeaponType() + "," + humanBeing.getMood() + "," + humanBeing.getCar().getCool() + "\n");
+                    osr.write(humanBeing.getName() + ", " + humanBeing.getCoordinates().getX() + ", " + humanBeing.getCoordinates().getY() + ", " + humanBeing.getRealHero() + ", " + humanBeing.getHasToothpick() + ", " + humanBeing.getImpactSpeed() + ", " + humanBeing.getWeaponType() + ", " + humanBeing.getMood() + ", " + humanBeing.getCar().getCool() + "\n");
                 }
                 osr.flush();
                 osr.close();

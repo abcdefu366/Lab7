@@ -19,22 +19,57 @@ public class CreatorHumanBeing {
         }
         String name = possibleField;
         System.out.println("Введите значение координаты x");
-        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$")) || Long.parseLong(possibleField) > 357) {
-            System.out.println("Неверный ввод данных, координата x должна быть целым числом. Максимальное значение x = 357");
+        boolean condition = true;
+        while(condition) {
+            try {
+                if (!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$")) || Long.parseLong(possibleField) > 357) {
+                    System.out.println("Неверный ввод данных, координата x должна быть целым числом. Максимальное значение x = 357");
+                }
+                else {
+                    condition = false;
+                }
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Некорректный ввод данных (значение не принадлежит допустимому диапазону). Введите ещё раз!");
+            }
         }
         Long x = Long.parseLong(possibleField);
+        condition = true;
         System.out.println("Введите значение координаты y");
-        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))){
-            System.out.println("Неверный ввод данных, координата y должна быть целым числом");
+        while(condition) {
+            if (!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))) {
+                    System.out.println("Неверный ввод данных, координата y должна быть целым числом");
+            }
+            else {
+                condition = false;
+            }
+            try {
+                Long.parseLong(possibleField);
+            }
+            catch (NumberFormatException e) {
+                condition = true;
+                System.out.println("Некорректный ввод данных (значение не принадлежит допустимому диапазону). Введите ещё раз!");
+            }
         }
         Long y = Long.parseLong(possibleField);
-        System.out.println("Введите значение является ли он настоящим героем (Введите true, если да. По умолчанию false)");
+        condition = true;
+        System.out.println("Введите значение является ли он настоящим героем. Введите true, если да. При любом другом вводе - false");
         Boolean realHero = Boolean.parseBoolean(reader.getNewLine());
-        System.out.println("Введите значение ковыряется ли он в зубах (Введите true, если да. По умолчанию false)");
+        System.out.println("Введите значение ковыряется ли он в зубах. Введите true, если да. При любом другом вводе - false");
         Boolean hasToothpick = Boolean.parseBoolean(reader.getNewLine());
         System.out.println("Введите значение скорости");
-        while(!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))){
-            System.out.println("Неверный ввод данных, скорость должна быть целым числом");
+        while(condition) {
+            try {
+                if (!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))) {
+                    System.out.println("Неверный ввод данных, скорость должна быть целым числом");
+                }
+                else {
+                    condition = false;
+                }
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Некорректный ввод данных (значение не принадлежит допустимому диапазону). Введите ещё раз!");
+            }
         }
         Integer speed = Integer.parseInt(possibleField);
         System.out.println("Введите значение числа WeaponType");
@@ -87,7 +122,7 @@ public class CreatorHumanBeing {
         }
         Integer intMood = Integer.parseInt(possibleField);
         Mood mood = Mood.getMood(intMood);
-        System.out.println("Введите значение крутая ли машина (Введите true, если да. По умолчанию false)");
+        System.out.println("Введите значение крутая ли машина. Введите true, если да. При любом другом вводе - false");
         Boolean cool = Boolean.parseBoolean(reader.getNewLine());
         return (new HumanBeing(name, new Coordinates(x, y), realHero, hasToothpick, speed, weaponType, mood, new Car(cool)));
     }

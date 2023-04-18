@@ -4,6 +4,8 @@ import Classes.Colors;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
+import java.sql.SQLOutput;
+
 public class HelpCommand implements CommandPattern {
 
     /** Метод, выводящий справку по доступным командам */
@@ -26,6 +28,18 @@ public class HelpCommand implements CommandPattern {
             System.out.println(Colors.CYAN + "print_unique_mood:" + Colors.RESET + " " + Colors.PURPLE + "вывести уникальные значения поля mood всех элементов в коллекции" + Colors.RESET);
             System.out.println(Colors.CYAN + "print_field_ascending_impact_speed:" + Colors.RESET + " " + Colors.PURPLE + "вывести значения поля impactSpeed всех элементов в порядке возрастания" + Colors.RESET);
             System.out.println(Colors.CYAN + "print_field_descending_car:" + Colors.RESET + " " + Colors.PURPLE + "вывести значения поля car всех элементов в порядке убывания" + Colors.RESET);
+            System.out.println();
+            System.out.println(Colors.CYAN + "В коллекции у элементов поля (доступные для редактирования) расположены в следующем порядке:" + Colors.RESET + "\n" + Colors.PURPLE + "1 - имя" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "2 - координата по x" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "3 - координата по y" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "4 - RealHero" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "5 - HasToothpick" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "6 - ImpactSpeed" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "7 - WeaponType" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "8 - Mood" + Colors.RESET);
+            System.out.println(Colors.PURPLE + "9 - Car" + Colors.RESET);
+            System.out.println();
+            System.out.println(Colors.CYAN + "В командах update, insert_at, add_if_max, sort в качестве {parameter} используется одно из вышеперечисленных полей" + Colors.RESET);
             System.out.println();
         }
         else {

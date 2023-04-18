@@ -24,15 +24,19 @@ public class InsertAtCommand implements CommandPattern {
                 System.out.println(Colors.YELLOW + "Введён некорректный индекс сортировки" + Colors.RESET);
             }
             else {
-                Integer index = Integer.parseInt(CommandEater.getSplit()[1]);
-                if (index > HumanBeingCollection.getHumanBeings().size()) {
-                    System.out.println(Colors.YELLOW + "Индекс превосходит максимально допустимый для данной коллекции, так как в ней содержится" + Colors.RESET + " " + HumanBeingCollection.getHumanBeings().size() + " элементов");
+                try {
+                    Integer index = Integer.parseInt(CommandEater.getSplit()[1]);
+                    if (index > HumanBeingCollection.getHumanBeings().size()) {
+                        System.out.println(Colors.YELLOW + "Индекс превосходит максимально допустимый для данной коллекции, так как в ней содержится" + Colors.RESET + " " + HumanBeingCollection.getHumanBeings().size() + " элементов");
+                    } else {
+                        CreatorHumanBeing creatorHumanBeing = new CreatorHumanBeing(reader);
+                        HumanBeing humanBeing = creatorHumanBeing.create();
+                        HumanBeingCollection.getHumanBeings().add(index, humanBeing);
+                        System.out.println(Colors.BLUE + "Новый элемент добавлен на позицию под номером:" + Colors.RESET + " " + index);
+                    }
                 }
-                else {
-                    CreatorHumanBeing creatorHumanBeing = new CreatorHumanBeing(reader);
-                    HumanBeing humanBeing = creatorHumanBeing.create();
-                    HumanBeingCollection.getHumanBeings().add(index, humanBeing);
-                    System.out.println(Colors.BLUE + "Новый элемент добавлен на позицию под номером:" + Colors.RESET + " " + index);
+                catch (NumberFormatException e) {
+                    System.out.println("Некорректный ввод данных (значение не принадлежит допустимому диапазону). Введите ещё раз!");
                 }
             }
         }
