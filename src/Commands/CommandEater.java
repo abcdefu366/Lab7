@@ -2,35 +2,68 @@ package Commands;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import Classes.Colors;
 import Commands.myCommands.SaveCommand;
 import Commands.myCommands.*;
-import utils.readers.Reader;
-import utils.readers.ReaderFromConsole;
+import myUtilities.allForReaders.Reader;
+import myUtilities.allForReaders.ReaderFromConsole;
 
+/**
+ * The type Command eater.
+ */
 public class CommandEater {
-
     private static Boolean isProgramRunning = true;
+    /**
+     * The constant fileName.
+     */
     protected static String fileName;
+    /**
+     * The Split.
+     */
     protected static String[] split;
 
+    /**
+     * The constant reader.
+     */
     protected static Reader reader = new ReaderFromConsole();
 
-
+    /**
+     * The constant commandPatternHashMap.
+     */
     protected static Map<String, CommandPattern> commandPatternHashMap = new HashMap<>();
 
+    /**
+     * Sets is program running.
+     *
+     * @param isProgramRunning the is program running
+     */
     public static void setIsProgramRunning(Boolean isProgramRunning) {
         CommandEater.isProgramRunning = isProgramRunning;
     }
+
+    /**
+     * Gets is program running.
+     *
+     * @return the is program running
+     */
     public static Boolean getIsProgramRunning() {
         return isProgramRunning;
     }
+
+    /**
+     * Get split string [ ].
+     *
+     * @return the string [ ]
+     */
     public static String[] getSplit() {
         return split;
     }
+
+    /**
+     * Command eat.
+     */
     public static void commandEat() {
-        init();
+        loadCommands();
         while (getIsProgramRunning()) {
             String request = reader.getNewLine();
             if(request == null) {
@@ -39,12 +72,15 @@ public class CommandEater {
             }
             split = request.split(" ");
             CommandPattern commandPattern = commandPatternHashMap.get(split[0]);
-            if(commandPattern == null) System.out.println(Colors.BLACK + "Введена несуществующая команда" + Colors.RESET);
+            if(commandPattern == null) System.out.println(Colors.YELLOW + "Введена несуществующая команда" + Colors.RESET);
             else commandPattern.execute();
         }
     }
 
-    protected static void init(){
+    /**
+     * loadCommands.
+     */
+    protected static void loadCommands(){
         commandPatternHashMap.put("help", new HelpCommand());
         commandPatternHashMap.put("exit", new ExitCommand());
         commandPatternHashMap.put("show", new ShowCommand());
@@ -63,16 +99,32 @@ public class CommandEater {
         commandPatternHashMap.put("execute_script", new ExecuteScriptCommand());
     }
 
+    /**
+     * Sets file name.
+     *
+     * @param fileName the file name
+     */
     public static void setFileName(String fileName) {
         CommandEater.fileName = fileName;
     }
+
+    /**
+     * Gets file name.
+     *
+     * @return the file name
+     */
     public static String getFileName() {
         return fileName;
     }
 
+    /**
+     * Sets reader.
+     *
+     * @param reader the reader
+     */
     public static void setReader(Reader reader) {
         CommandEater.reader = reader;
-        init();
+        loadCommands();
     }
 
 }

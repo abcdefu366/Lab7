@@ -1,31 +1,32 @@
-package utils.readers;
+package myUtilities.allForReaders;
 
+import Classes.Colors;
+
+/**
+ * The type Reader manager.
+ */
 public class ReaderManager extends Reader {
     private Reader reader;
-    private NameReader nameReader;
+    private NameOfReader nameOfReader;
 
     /**
      * Instantiates a new Reader manager.
      *
      * @param reader     the reader
-     * @param nameReader the name reader
+     * @param nameOfReader the name reader
      */
-    public ReaderManager(Reader reader, NameReader nameReader) {
+    public ReaderManager(Reader reader, NameOfReader nameOfReader) {
         this.reader = reader;
-        this.nameReader = nameReader;
+        this.nameOfReader = nameOfReader;
     }
 
-    /**
-     * Gets a new line.
-     * if a new line == null. Switch reader to ReaderFromConsole.
-     * @return request the new line
-     */
     @Override
     public String getNewLine(){
         String request = reader.getNewLine();
-        if(request == null){
+        if (request == null){
+            System.out.println(Colors.YELLOW + "В файле закончились строки. Продолжите ввод данных с консоли" + Colors.RESET);
             setReader(new ReaderFromConsole());
-            setNameReader(NameReader.READERCONSOLE);
+            setNameReader(NameOfReader.CONSOLEREADER);
             request = reader.getNewLine();
         }
         return request;
@@ -49,21 +50,16 @@ public class ReaderManager extends Reader {
         this.reader = reader;
     }
 
-    /**
-     * Gets name reader.
-     *
-     * @return the name reader
-     */
-    public NameReader getNameReader() {
-        return nameReader;
+    public NameOfReader getNameOfReader() {
+        return nameOfReader;
     }
 
     /**
      * Sets name reader.
      *
-     * @param nameReader the name reader
+     * @param nameOfReader the name reader
      */
-    public void setNameReader(NameReader nameReader) {
-        this.nameReader = nameReader;
+    public void setNameReader(NameOfReader nameOfReader) {
+        this.nameOfReader = nameOfReader;
     }
 }

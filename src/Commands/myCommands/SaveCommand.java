@@ -7,8 +7,10 @@ import Commands.CommandEater;
 import Commands.CommandPattern;
 import java.io.*;
 
+/**
+ * The type Save command.
+ */
 public class SaveCommand implements CommandPattern {
-    /** Метод, сохраняющий коллекцию в файл */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {

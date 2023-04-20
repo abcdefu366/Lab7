@@ -4,6 +4,9 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * The type Human being.
+ */
 public class HumanBeing {
     private Long id;
     private String name;
@@ -16,9 +19,20 @@ public class HumanBeing {
     private Mood mood;
     private Car car;
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public Long getId() {
         return id;
     }
+
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         if (name == null || name.equals("")) {
             throw new IllegalArgumentException("name не может быть null, Строка не может быть пустой");
@@ -27,6 +41,12 @@ public class HumanBeing {
             this.name = name;
         }
     }
+
+    /**
+     * Sets coordinates.
+     *
+     * @param coordinates the coordinates
+     */
     public void setCoordinates(Coordinates coordinates) {
         if (coordinates == null) {
             throw new IllegalArgumentException("coordinates не может быть null");
@@ -35,6 +55,12 @@ public class HumanBeing {
             this.coordinates = coordinates;
         }
     }
+
+    /**
+     * Sets real hero.
+     *
+     * @param realHero the real hero
+     */
     public void setRealHero(Boolean realHero) {
         if (realHero == null) {
             throw new IllegalArgumentException("realHero не может быть null");
@@ -43,6 +69,12 @@ public class HumanBeing {
             this.realHero = realHero;
         }
     }
+
+    /**
+     * Sets has toothpick.
+     *
+     * @param hasToothpick the has toothpick
+     */
     public void setHasToothpick(Boolean hasToothpick) {
         if (hasToothpick == null) {
             throw new IllegalArgumentException("hasToothpick не может быть null");
@@ -51,6 +83,12 @@ public class HumanBeing {
             this.hasToothpick = hasToothpick;
         }
     }
+
+    /**
+     * Sets impact speed.
+     *
+     * @param impactSpeed the impact speed
+     */
     public void setImpactSpeed(Integer impactSpeed) {
         if (impactSpeed == null) {
             throw new IllegalArgumentException("impactSpeed не может быть null");
@@ -59,9 +97,21 @@ public class HumanBeing {
             this.impactSpeed = impactSpeed;
         }
     }
+
+    /**
+     * Sets weapon type.
+     *
+     * @param weaponType the weapon type
+     */
     public void setWeaponType(WeaponType weaponType) {
         this.weaponType = weaponType;
     }
+
+    /**
+     * Sets mood.
+     *
+     * @param mood the mood
+     */
     public void setMood(Mood mood) {
         if (mood == null) {
             throw new IllegalArgumentException("mood не может быть null");
@@ -70,6 +120,12 @@ public class HumanBeing {
             this.mood = mood;
         }
     }
+
+    /**
+     * Sets car.
+     *
+     * @param car the car
+     */
     public void setCar(Car car) {
         if (car == null) {
             throw new IllegalArgumentException("car не может быть null");
@@ -92,6 +148,19 @@ public class HumanBeing {
                 Colors.WHITE + " Mood - " + Colors.RED + mood + "\n" +
                 Colors.WHITE + " Car - " + Colors.RED + car + Colors.RESET + "\n");
     }
+
+    /**
+     * Instantiates a new Human being.
+     *
+     * @param name         the name
+     * @param coordinates  the coordinates
+     * @param realHero     the real hero
+     * @param hasToothpick the has toothpick
+     * @param impactSpeed  the impact speed
+     * @param weaponType   the weapon type
+     * @param mood         the mood
+     * @param car          the car
+     */
     public HumanBeing(String name, Coordinates coordinates, Boolean realHero, Boolean hasToothpick, Integer impactSpeed, WeaponType weaponType, Mood mood, Car car) {
         setName(name);
         setCoordinates(coordinates);
@@ -105,32 +174,83 @@ public class HumanBeing {
         UUID forId = UUID.randomUUID();
         id = Math.abs(forId.getMostSignificantBits());
     }
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     * Gets coordinates.
+     *
+     * @return the coordinates
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
+
+    /**
+     * Gets real hero.
+     *
+     * @return the real hero
+     */
     public Boolean getRealHero() {
         return realHero;
     }
+
+    /**
+     * Gets has toothpick.
+     *
+     * @return the has toothpick
+     */
     public Boolean getHasToothpick() {
         return hasToothpick;
     }
+
+    /**
+     * Gets impact speed.
+     *
+     * @return the impact speed
+     */
     public Integer getImpactSpeed() {
         return impactSpeed;
     }
+
+    /**
+     * Gets weapon type.
+     *
+     * @return the weapon type
+     */
     public WeaponType getWeaponType() {
         return weaponType;
     }
+
+    /**
+     * Gets mood.
+     *
+     * @return the mood
+     */
     public Mood getMood() {
         return mood;
     }
+
+    /**
+     * Gets car.
+     *
+     * @return the car
+     */
     public Car getCar() {
         return car;
     }
 
-    public class SortByName implements Comparator {
+    /**
+     * The type Sort by name.
+     */
+    public static class SortByName implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
             HumanBeing humanBeingOne = (HumanBeing) o1;
@@ -138,6 +258,10 @@ public class HumanBeing {
             return humanBeingOne.getName().compareTo(humanBeingTwo.getName());
         }
     }
+
+    /**
+     * The type Sort by id.
+     */
     public static class SortById implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -146,6 +270,10 @@ public class HumanBeing {
             return humanBeingOne.getId().compareTo(humanBeingTwo.getId());
         }
     }
+
+    /**
+     * The type Sort by x coordinate.
+     */
     public static class SortByX_Coordinate implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -154,6 +282,10 @@ public class HumanBeing {
             return humanBeingOne.getCoordinates().getX().compareTo(humanBeingTwo.getCoordinates().getX());
         }
     }
+
+    /**
+     * The type Sort by y coordinate.
+     */
     public static class SortByY_Coordinate implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -162,6 +294,10 @@ public class HumanBeing {
             return humanBeingOne.getCoordinates().getY().compareTo(humanBeingTwo.getCoordinates().getY());
         }
     }
+
+    /**
+     * The type Sort by real hero.
+     */
     public static class SortByRealHero implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -170,6 +306,10 @@ public class HumanBeing {
             return humanBeingOne.getRealHero().compareTo(humanBeingTwo.getRealHero());
         }
     }
+
+    /**
+     * The type Sort by has toothpick.
+     */
     public static class SortByHasToothpick implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -178,6 +318,10 @@ public class HumanBeing {
             return humanBeingOne.getHasToothpick().compareTo(humanBeingTwo.getHasToothpick());
         }
     }
+
+    /**
+     * The type Sort by impact speed.
+     */
     public static class SortByImpactSpeed implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -186,6 +330,10 @@ public class HumanBeing {
             return humanBeingOne.getImpactSpeed().compareTo(humanBeingTwo.getImpactSpeed());
         }
     }
+
+    /**
+     * The type Sort by weapon type.
+     */
     public static class SortByWeaponType implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -194,6 +342,10 @@ public class HumanBeing {
             return humanBeingOne.getWeaponType().compareTo(humanBeingTwo.getWeaponType());
         }
     }
+
+    /**
+     * The type Sort by mood.
+     */
     public static class SortByMood implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
@@ -202,6 +354,10 @@ public class HumanBeing {
             return humanBeingOne.getMood().compareTo(humanBeingTwo.getMood());
         }
     }
+
+    /**
+     * The type Sort by car.
+     */
     public static class SortByCar implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {

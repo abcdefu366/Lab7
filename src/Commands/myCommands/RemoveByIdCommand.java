@@ -5,10 +5,19 @@ import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-import utils.readers.Reader;
+import myUtilities.allForReaders.Reader;
 
+/**
+ * The type Remove by id command.
+ */
 public class RemoveByIdCommand implements CommandPattern {
     private Reader reader;
+
+    /**
+     * Instantiates a new Remove by id command.
+     *
+     * @param reader the reader
+     */
     public RemoveByIdCommand(Reader reader) {
         this.reader = reader;
     }

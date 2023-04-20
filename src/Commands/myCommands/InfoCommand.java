@@ -5,6 +5,9 @@ import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
+/**
+ * The type Info command.
+ */
 public class InfoCommand implements CommandPattern {
     @Override
     public void execute() {

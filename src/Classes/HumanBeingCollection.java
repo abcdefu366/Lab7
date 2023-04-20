@@ -6,10 +6,18 @@ import java.io.*;
 import java.util.Date;
 import java.util.LinkedList;
 
+/**
+ * The type Human being collection.
+ */
 public class HumanBeingCollection {
     private static LinkedList<HumanBeing> humanBeings = new LinkedList<>();
     private static Date dateOfInitialization = new Date();
-    /** Метод для добавления HumanBeing из файла в коллекцию */
+
+    /**
+     * Reader from file.
+     *
+     * @param path the path
+     */
     public static void readerFromFile(String path) {
         String line = "";
         try {
@@ -28,16 +36,30 @@ public class HumanBeingCollection {
             throw new RuntimeException(e);
         }
     }
-    /** Метод, выводящий информацию о коллекции */
+
+    /**
+     * Gets info.
+     */
     public static void getInfo() {
         System.out.println(Colors.GREEN + "Тип коллекции:" + Colors.RESET + " " + Colors.WHITE + humanBeings.getClass().getTypeName() + Colors.RESET);
         System.out.println(Colors.GREEN + "Дата инициализации:"+ Colors.RESET + " " + Colors.WHITE + dateOfInitialization + Colors.RESET);
         System.out.println(Colors.GREEN + "Количество элементов:" + Colors.RESET + " " + Colors.WHITE + humanBeings.size() + Colors.RESET);
     }
+
+    /**
+     * Gets human beings.
+     *
+     * @return the human beings
+     */
     public static LinkedList<HumanBeing> getHumanBeings() {
         return humanBeings;
     }
 
+    /**
+     * Add.
+     *
+     * @param humanBeing the human being
+     */
     public static void add(HumanBeing humanBeing){
         humanBeings.add(humanBeing);
     }

@@ -4,8 +4,10 @@ import Classes.Colors;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
+/**
+ * The type Exit command.
+ */
 public class ExitCommand implements CommandPattern {
-    /** Метод, завершающий программу */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {

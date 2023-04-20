@@ -9,6 +9,9 @@ import Commands.CommandPattern;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Print unique mood command.
+ */
 public class PrintUniqueMoodCommand implements CommandPattern {
     @Override
     public void execute() {

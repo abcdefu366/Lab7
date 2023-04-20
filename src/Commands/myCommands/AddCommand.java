@@ -3,13 +3,21 @@ package Commands.myCommands;
 import Classes.*;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-import utils.CreatorHumanBeing;
-import utils.readers.Reader;
+import myUtilities.CreatorHumanBeing;
+import myUtilities.allForReaders.Reader;
 
+/**
+ * The type Add command.
+ */
 public class AddCommand implements CommandPattern {
 
     private Reader reader;
 
+    /**
+     * Instantiates a new Add command.
+     *
+     * @param reader the reader
+     */
     public AddCommand(Reader reader) {
         this.reader = reader;
     }

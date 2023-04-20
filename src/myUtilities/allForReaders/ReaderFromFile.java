@@ -1,4 +1,4 @@
-package utils.readers;
+package myUtilities.allForReaders;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,12 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Reader from file.
+ */
 public class ReaderFromFile extends Reader{
 
     private final String FILE_PATH;
     private final List<String> allCommands = new ArrayList<>();
     private int numberString = -1;
 
+    /**
+     * Instantiates a new Reader from file.
+     *
+     * @param FILE_PATH the file path
+     */
     public ReaderFromFile(String FILE_PATH) {
         this.FILE_PATH = FILE_PATH;
         addAllCommands();

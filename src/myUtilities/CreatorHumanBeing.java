@@ -1,16 +1,29 @@
-package utils;
+package myUtilities;
 
 import Classes.*;
-import utils.readers.Reader;
+import myUtilities.allForReaders.Reader;
 
+/**
+ * The type Creator human being.
+ */
 public class CreatorHumanBeing {
     private Reader reader;
 
+    /**
+     * Instantiates a new Creator human being.
+     *
+     * @param reader the reader
+     */
     public CreatorHumanBeing(Reader reader) {
         this.reader = reader;
     }
 
-    public HumanBeing create(){
+    /**
+     * Create human being.
+     *
+     * @return the human being
+     */
+    public HumanBeing create() {
         System.out.println("Введите значение имени");
         String possibleField = reader.getNewLine();
         while(possibleField.equals("") || possibleField == "") {
@@ -53,9 +66,9 @@ public class CreatorHumanBeing {
         }
         Long y = Long.parseLong(possibleField);
         condition = true;
-        System.out.println("Введите значение является ли он настоящим героем. Введите true, если да. При любом другом вводе - false");
+        System.out.println("Является ли он настоящим героем? Введите true, если да. При любом другом вводе - false");
         Boolean realHero = Boolean.parseBoolean(reader.getNewLine());
-        System.out.println("Введите значение ковыряется ли он в зубах. Введите true, если да. При любом другом вводе - false");
+        System.out.println("Есть ли у него зубочистка? Введите true, если да. При любом другом вводе - false");
         Boolean hasToothpick = Boolean.parseBoolean(reader.getNewLine());
         System.out.println("Введите значение скорости");
         while(condition) {
@@ -72,7 +85,7 @@ public class CreatorHumanBeing {
             }
         }
         Integer speed = Integer.parseInt(possibleField);
-        System.out.println("Введите значение числа WeaponType");
+        System.out.println("Введите значение WeaponType");
         System.out.println("1 или pistol для PISTOL, 2 или KNIFE для KNIFE, 3 или machine_gun для MACHINE_GUN");
         String[] validInputsWT = {"1", "2", "3", "pistol", "knife", "machine_gun"};
         boolean isValidWT = false;
@@ -97,7 +110,7 @@ public class CreatorHumanBeing {
         }
         Integer intWeaponType = Integer.parseInt(possibleField);
         WeaponType weaponType = WeaponType.getWeaponType(intWeaponType);
-        System.out.println("Введите значение числа Mood");
+        System.out.println("Введите значение Mood");
         System.out.println("1 или sadness для SADNESS, 2 или sorrow для SORROW, 3 или longing для LONGING");
         String[] validInputsM = {"1", "2", "3", "sorrow", "sadness", "longing"};
         boolean isValidM = false;
@@ -122,7 +135,7 @@ public class CreatorHumanBeing {
         }
         Integer intMood = Integer.parseInt(possibleField);
         Mood mood = Mood.getMood(intMood);
-        System.out.println("Введите значение крутая ли машина. Введите true, если да. При любом другом вводе - false");
+        System.out.println("Крутая ли у него машина. Введите true, если да. При любом другом вводе - false");
         Boolean cool = Boolean.parseBoolean(reader.getNewLine());
         return (new HumanBeing(name, new Coordinates(x, y), realHero, hasToothpick, speed, weaponType, mood, new Car(cool)));
     }

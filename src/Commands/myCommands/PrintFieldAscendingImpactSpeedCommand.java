@@ -9,6 +9,9 @@ import Commands.CommandPattern;
 import java.util.Collections;
 import java.util.LinkedList;
 
+/**
+ * The type Print field ascending impact speed command.
+ */
 public class PrintFieldAscendingImpactSpeedCommand implements CommandPattern {
     @Override
     public void execute() {

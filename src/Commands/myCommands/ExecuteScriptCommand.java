@@ -3,14 +3,17 @@ package Commands.myCommands;
 import Classes.Colors;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-import utils.readers.NameReader;
-import utils.readers.Reader;
-import utils.readers.ReaderFromFile;
-import utils.readers.ReaderManager;
+import myUtilities.allForReaders.NameOfReader;
+import myUtilities.allForReaders.Reader;
+import myUtilities.allForReaders.ReaderFromFile;
+import myUtilities.allForReaders.ReaderManager;
 
 
+/**
+ * The type Execute script command.
+ */
 public class ExecuteScriptCommand implements CommandPattern {
-    private final static int MAX_COUNT_RECURSION = 100;
+    private final static int COUNT_RECURSION_MAX = 100;
     private static int countRecursion = 0;
     @Override
     public void execute() {
@@ -22,10 +25,10 @@ public class ExecuteScriptCommand implements CommandPattern {
                 System.out.println(Colors.YELLOW + "Такое количество параметров невозможно для этой команды" + Colors.RESET);
             }
             else {
-                if (countRecursion < MAX_COUNT_RECURSION) {
+                if (countRecursion < COUNT_RECURSION_MAX) {
                     countRecursion++;
                     String FILE_PATH = CommandEater.getSplit()[1];
-                    Reader reader = new ReaderManager(new ReaderFromFile(FILE_PATH), NameReader.READERFILE);
+                    Reader reader = new ReaderManager(new ReaderFromFile(FILE_PATH), NameOfReader.FILEREADER);
                     CommandEater.setReader(reader);
                     CommandEater.commandEat();
                 }

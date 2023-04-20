@@ -5,6 +5,9 @@ import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
+/**
+ * The type Clear command.
+ */
 public class ClearCommand implements CommandPattern {
     @Override
     public void execute() {

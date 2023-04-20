@@ -6,8 +6,10 @@ import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
 
+/**
+ * The type Show command.
+ */
 public class ShowCommand implements CommandPattern {
-    /** Метод, выводящий все элементы коллекции */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {

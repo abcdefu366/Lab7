@@ -3,13 +3,21 @@ package Commands.myCommands;
 import Classes.*;
 import Commands.CommandEater;
 import Commands.CommandPattern;
-import utils.CreatorHumanBeing;
-import utils.readers.Reader;
+import myUtilities.CreatorHumanBeing;
+import myUtilities.allForReaders.Reader;
 
 
+/**
+ * The type Insert at command.
+ */
 public class InsertAtCommand implements CommandPattern {
     private Reader reader;
 
+    /**
+     * Instantiates a new Insert at command.
+     *
+     * @param reader the reader
+     */
     public InsertAtCommand(Reader reader) {
         this.reader = reader;
     }

@@ -1,8 +1,11 @@
-package utils.readers;
+package myUtilities.allForReaders;
 
 import java.util.Scanner;
 
-public class ReaderFromConsole extends Reader{
+/**
+ * The type Reader from console.
+ */
+public class ReaderFromConsole extends Reader {
     private final Scanner scanner = new Scanner(System.in);
 
     @Override

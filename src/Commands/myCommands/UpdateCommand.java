@@ -5,8 +5,10 @@ import Commands.CommandEater;
 import Commands.CommandPattern;
 
 
+/**
+ * The type Update command.
+ */
 public class UpdateCommand implements CommandPattern {
-    /** Метод, обновляющий значение элемента коллекции, id которого равен заданному */
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning()) {
@@ -17,7 +19,7 @@ public class UpdateCommand implements CommandPattern {
                 if (!(CommandEater.getSplit()[1].matches("^[+]?\\d+$"))) {
                     System.out.println(Colors.YELLOW + "Введён некорректный id" + Colors.RESET);
                 }
-                if (!(CommandEater.getSplit()[2].matches("[1-9]"))) {
+                if (!(CommandEater.getSplit()[2].matches("[1-10]"))) {
                     System.out.println(Colors.YELLOW + "Введён некорректный параметр" + Colors.RESET);
                 } else {
                     try {
@@ -28,17 +30,12 @@ public class UpdateCommand implements CommandPattern {
                             for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
                                 if (humanBeing.getId().equals(id)) {
                                     if (parameter.equals(1)) {
+                                        System.out.println(Colors.YELLOW + "Невозможно изменить id элемента" + Colors.RESET);
+                                    }
+                                    if (parameter.equals(2)) {
                                         humanBeing.setName(newParameter);
                                     }
                                     if (parameter.equals(3)) {
-                                        if (newParameter.matches("^[+-]?\\d+$")) {
-                                            Long y = humanBeing.getCoordinates().getY();
-                                            humanBeing.setCoordinates(new Coordinates(Long.valueOf(newParameter), y));
-                                        } else {
-                                            System.out.println(Colors.YELLOW + "Некорректный новый параметр" + Colors.RESET);
-                                        }
-                                    }
-                                    if (parameter.equals(2)) {
                                         if (newParameter.matches("^[+-]?\\d+$")) {
                                             Long x = humanBeing.getCoordinates().getX();
                                             humanBeing.setCoordinates(new Coordinates(x, Long.valueOf(newParameter)));
@@ -47,19 +44,27 @@ public class UpdateCommand implements CommandPattern {
                                         }
                                     }
                                     if (parameter.equals(4)) {
-                                        humanBeing.setRealHero(Boolean.valueOf(newParameter));
+                                        if (newParameter.matches("^[+-]?\\d+$")) {
+                                            Long y = humanBeing.getCoordinates().getY();
+                                            humanBeing.setCoordinates(new Coordinates(Long.valueOf(newParameter), y));
+                                        } else {
+                                            System.out.println(Colors.YELLOW + "Некорректный новый параметр" + Colors.RESET);
+                                        }
                                     }
                                     if (parameter.equals(5)) {
-                                        humanBeing.setHasToothpick(Boolean.valueOf(newParameter));
+                                        humanBeing.setRealHero(Boolean.valueOf(newParameter));
                                     }
                                     if (parameter.equals(6)) {
+                                        humanBeing.setHasToothpick(Boolean.valueOf(newParameter));
+                                    }
+                                    if (parameter.equals(7)) {
                                         if (newParameter.matches("^[+-]?\\d+$")) {
                                             humanBeing.setImpactSpeed(Integer.valueOf(newParameter));
                                         } else {
                                             System.out.println(Colors.YELLOW + "Некорректный новый параметр" + Colors.RESET);
                                         }
                                     }
-                                    if (parameter.equals(7)) {
+                                    if (parameter.equals(8)) {
                                         String str = newParameter.toUpperCase();
                                         if (str.equals("PISTOL") || str.equals("KNIFE") || str.equals("MACHINE_GUN")) {
                                             humanBeing.setWeaponType(WeaponType.valueOf(str));
@@ -73,7 +78,7 @@ public class UpdateCommand implements CommandPattern {
                                             System.out.println(Colors.YELLOW + "Некорректный новый параметр" + Colors.RESET);
                                         }
                                     }
-                                    if (parameter.equals(8)) {
+                                    if (parameter.equals(9)) {
                                         String str = newParameter.toUpperCase();
                                         if (str.equals("SORROW") || str.toUpperCase().equals("SADNESS") || str.equals("LONGING")) {
                                             humanBeing.setMood(Mood.valueOf(str));
@@ -87,7 +92,7 @@ public class UpdateCommand implements CommandPattern {
                                             System.out.println(Colors.YELLOW + "Некорректный новый параметр" + Colors.RESET);
                                         }
                                     }
-                                    if (parameter.equals(9)) {
+                                    if (parameter.equals(10)) {
                                         humanBeing.setCar(new Car(Boolean.valueOf(newParameter)));
                                     }
                                 }
