@@ -84,6 +84,7 @@ public class CreatorHumanBeing {
                 System.out.println("Некорректный ввод данных (значение не принадлежит допустимому диапазону). Введите ещё раз!");
             }
         }
+        //добавить исключения
         Integer speed = Integer.parseInt(possibleField);
         System.out.println("Введите значение WeaponType");
         System.out.println("1 или pistol для PISTOL, 2 или KNIFE для KNIFE, 3 или machine_gun для MACHINE_GUN");

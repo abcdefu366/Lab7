@@ -1,5 +1,7 @@
 import Classes.*;
 import Commands.CommandEater;
+import Database.Connection;
+
 import java.util.NoSuchElementException;
 
 /**
@@ -12,6 +14,7 @@ public class Main {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+        /*
         if (!(args.length == 1)) {
             System.out.println(Colors.YELLOW + "Некорректный путь к файлу с коллекцией" + Colors.RESET);
         }
@@ -30,5 +33,9 @@ public class Main {
                 System.out.println(Colors.YELLOW + "Проверьте корректность введённой переменной окружения!" + Colors.RESET);
             }
         }
+
+         */
+
+        System.out.println(Connection.executePreparedStatement("CREATE TABLE HUI"));
     }
 }
