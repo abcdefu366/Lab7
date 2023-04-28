@@ -1,7 +1,6 @@
 import Classes.*;
 import Commands.CommandEater;
-import Database.Connection;
-
+import Database.Authentication;
 import java.util.NoSuchElementException;
 
 /**
@@ -14,28 +13,17 @@ public class Main {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        /*
-        if (!(args.length == 1)) {
-            System.out.println(Colors.YELLOW + "Некорректный путь к файлу с коллекцией" + Colors.RESET);
-        }
-        else {
-            try {
-                String varValue = System.getenv(args[0]);
-                CommandEater.setFileName(varValue);
-                HumanBeingCollection.readerFromFile(CommandEater.getFileName());
-                try {
-                    CommandEater.commandEat();
-                } catch (NoSuchElementException noSuchElementException) {
-                    System.out.println(Colors.YELLOW + "Неверный ввод. Продолжение работы программы невозможно" + Colors.RESET);
-                }
+        try {
+            Authentication.userAuthentication();
+            if (Authentication.getCurrentUser() != null) {
+                HumanBeingCollection.getFromDatabase();
+                System.out.println("Из базы данных добавлено объектов в коллекцию: " + HumanBeingCollection.getHumanBeings().size());
+                CommandEater.commandEat();
+            } else {
+                System.out.println("Выполнение команд неавторизованными пользователями запрещено, работа программы остановлена");
             }
-            catch (NullPointerException e) {
-                System.out.println(Colors.YELLOW + "Проверьте корректность введённой переменной окружения!" + Colors.RESET);
-            }
+        } catch (NoSuchElementException noSuchElementException) {
+            System.out.println(Colors.YELLOW + "Неверный ввод. Продолжение работы программы невозможно" + Colors.RESET);
         }
-
-         */
-
-        System.out.println(Connection.executePreparedStatement("CREATE TABLE HUI"));
     }
 }

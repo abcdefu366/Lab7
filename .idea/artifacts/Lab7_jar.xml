@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Lab7:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lab7_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Lab7.jar">
+        <element id="module-output" name="Lab7" />
+      </element>
+      <element id="file-copy" path="$USER_HOME$/Downloads/postgresql-42.6.0.jar" />
+    </root>
+  </artifact>
+</component>

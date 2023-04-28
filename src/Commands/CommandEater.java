@@ -3,7 +3,6 @@ package Commands;
 import java.util.HashMap;
 import java.util.Map;
 import Classes.Colors;
-import Commands.myCommands.SaveCommand;
 import Commands.myCommands.*;
 import myUtilities.allForReaders.Reader;
 import myUtilities.allForReaders.ReaderFromConsole;
@@ -13,10 +12,6 @@ import myUtilities.allForReaders.ReaderFromConsole;
  */
 public class CommandEater {
     private static Boolean isProgramRunning = true;
-    /**
-     * The constant fileName.
-     */
-    protected static String fileName;
     /**
      * The Split.
      */
@@ -75,6 +70,7 @@ public class CommandEater {
             while (condition) {
                 try {
                     commandPatternHashMap.get(split[0]);
+                    condition = false;
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println(Colors.YELLOW + "Введена несуществующая команда" + Colors.RESET);
                 }
@@ -88,7 +84,7 @@ public class CommandEater {
     /**
      * loadCommands.
      */
-    protected static void loadCommands(){
+    protected static void loadCommands() {
         commandPatternHashMap.put("help", new HelpCommand());
         commandPatternHashMap.put("exit", new ExitCommand());
         commandPatternHashMap.put("show", new ShowCommand());
@@ -96,7 +92,6 @@ public class CommandEater {
         commandPatternHashMap.put("remove_by_id", new RemoveByIdCommand(reader));
         commandPatternHashMap.put("clear", new ClearCommand());
         commandPatternHashMap.put("update", new UpdateCommand());
-        commandPatternHashMap.put("save", new SaveCommand());
         commandPatternHashMap.put("sort", new SortCommand());
         commandPatternHashMap.put("info", new InfoCommand());
         commandPatternHashMap.put("insert_at", new InsertAtCommand(reader));
@@ -106,25 +101,6 @@ public class CommandEater {
         commandPatternHashMap.put("add_if_max", new AddIfMaxCommand(reader));
         commandPatternHashMap.put("execute_script", new ExecuteScriptCommand());
     }
-
-    /**
-     * Sets file name.
-     *
-     * @param fileName the file name
-     */
-    public static void setFileName(String fileName) {
-        CommandEater.fileName = fileName;
-    }
-
-    /**
-     * Gets file name.
-     *
-     * @return the file name
-     */
-    public static String getFileName() {
-        return fileName;
-    }
-
     /**
      * Sets reader.
      *
@@ -134,5 +110,4 @@ public class CommandEater {
         CommandEater.reader = reader;
         loadCommands();
     }
-
 }

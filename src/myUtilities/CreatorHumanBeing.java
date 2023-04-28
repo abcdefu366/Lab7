@@ -51,7 +51,7 @@ public class CreatorHumanBeing {
         System.out.println("Введите значение координаты y");
         while(condition) {
             if (!((possibleField = reader.getNewLine()).matches("^[+-]?\\d+$"))) {
-                    System.out.println("Неверный ввод данных, координата y должна быть целым числом");
+                System.out.println("Неверный ввод данных, координата y должна быть целым числом");
             }
             else {
                 condition = false;

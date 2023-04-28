@@ -1,8 +1,9 @@
 package Classes;
 
-import Commands.CommandEater;
+import Database.Connection;
 
-import java.io.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -12,31 +13,6 @@ import java.util.LinkedList;
 public class HumanBeingCollection {
     private static LinkedList<HumanBeing> humanBeings = new LinkedList<>();
     private static Date dateOfInitialization = new Date();
-
-    /**
-     * Reader from file.
-     *
-     * @param path the path
-     */
-    public static void readerFromFile(String path) {
-        String line = "";
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(", ");
-                try {
-                    humanBeings.add(new HumanBeing(data[0], new Coordinates(Long.parseLong(data[1]), Long.parseLong(data[2])), Boolean.parseBoolean(data[3]), Boolean.parseBoolean(data[4]), Integer.parseInt(data[5]), WeaponType.valueOf(data[6]), Mood.valueOf(data[7]), new Car(Boolean.parseBoolean(data[8]))));
-                } catch (Exception ignored) {}
-            }
-            br.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(Colors.YELLOW + "Файл с коллекцией не найден" + Colors.RESET);
-            CommandEater.setIsProgramRunning(false);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     /**
      * Gets info.
      */
@@ -62,5 +38,37 @@ public class HumanBeingCollection {
      */
     public static void add(HumanBeing humanBeing){
         humanBeings.add(humanBeing);
+    }
+    public static void getFromDatabase() {
+        try {
+            ResultSet resultSet = Connection.executePreparedStatement("SELECT * FROM human_beings");
+            while (resultSet.next()) {
+                try {
+                    long id = resultSet.getLong(1);
+                    String name = resultSet.getString(2);
+                    long x = resultSet.getLong(3);
+                    long y = resultSet.getLong(4);
+                    Date date = resultSet.getDate(5);
+                    boolean realHero = resultSet.getBoolean(6);
+                    boolean hasToothpick = resultSet.getBoolean(7);
+                    int impactSpeed = resultSet.getInt(8);
+                    String weaponTypeString = resultSet.getString(9);
+                    WeaponType weaponType = null;
+                    if (!weaponTypeString.equals("null")) weaponType = WeaponType.valueOf(weaponTypeString);
+                    String moodString = resultSet.getString(10);
+                    Mood mood = Mood.valueOf(moodString);
+                    if (moodString.equals("null")) throw new IllegalArgumentException();
+                    boolean cool = resultSet.getBoolean(11);
+                    String user = resultSet.getString(12);
+                    humanBeings.add(new HumanBeing(id, name, new Coordinates(x, y), date, realHero, hasToothpick, impactSpeed, weaponType, mood, new Car(cool), user));
+                } catch (SQLException | NullPointerException | IllegalArgumentException exception) {
+                    Connection.executeStatement("delete * from human_beings where id = " + resultSet.getLong(1));
+                }
+            }
+        } catch (SQLException ignored) {}
+    }
+    public static void updateFromDB() {
+        humanBeings.clear();
+        getFromDatabase();
     }
 }

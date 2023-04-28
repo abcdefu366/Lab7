@@ -1,5 +1,10 @@
 package Classes;
 
+import Database.Authentication;
+import Database.Connection;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.UUID;
@@ -18,6 +23,15 @@ public class HumanBeing {
     private WeaponType weaponType = null;
     private Mood mood;
     private Car car;
+    private String user;
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public String getUser() {
+        return user;
+    }
 
     /**
      * Gets id.
@@ -146,7 +160,8 @@ public class HumanBeing {
                 Colors.WHITE + " ImpactSpeed = " + Colors.RED + impactSpeed + "\n" +
                 Colors.WHITE + " WeaponType - " + Colors.RED + weaponType + "\n" +
                 Colors.WHITE + " Mood - " + Colors.RED + mood + "\n" +
-                Colors.WHITE + " Car - " + Colors.RED + car + Colors.RESET + "\n");
+                Colors.WHITE + " Car - " + Colors.RED + car + "\n" +
+                Colors.WHITE + " User - " + Colors.RED + user + Colors.RESET);
     }
 
     /**
@@ -171,8 +186,34 @@ public class HumanBeing {
         setMood(mood);
         setCar(car);
         creationDate = new Date();
-        UUID forId = UUID.randomUUID();
-        id = Math.abs(forId.getMostSignificantBits());
+        id = setId();
+        user = Authentication.getCurrentUser();
+    }
+
+    public HumanBeing(Long id, String name, Coordinates coordinates, Date creationDate, Boolean realHero, Boolean hasToothpick, Integer impactSpeed, WeaponType weaponType, Mood mood, Car car, String user) {
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.realHero = realHero;
+        this.hasToothpick = hasToothpick;
+        this.impactSpeed = impactSpeed;
+        this.weaponType = weaponType;
+        this.mood = mood;
+        this.car = car;
+        this.user = user;
+    }
+
+    private long setId() {
+        long newId = 0;
+        ResultSet resultSet = Connection.executePreparedStatement("SELECT nextval('id')");
+        try {
+            resultSet.next();
+            newId = resultSet.getLong(1);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return newId;
     }
 
     /**
