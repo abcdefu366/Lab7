@@ -66,18 +66,15 @@ public class CommandEater {
                 break;
             }
             split = request.split(" ");
-            boolean condition = true;
-            while (condition) {
-                try {
-                    commandPatternHashMap.get(split[0]);
-                    condition = false;
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    System.out.println(Colors.YELLOW + "Введена несуществующая команда" + Colors.RESET);
-                }
+            if (split.length == 0) {
+                System.out.println(Colors.YELLOW + "Введена несуществующая команда" + Colors.RESET);
             }
-            CommandPattern commandPattern = commandPatternHashMap.get(split[0]);
-            if(commandPattern == null) System.out.println(Colors.YELLOW + "Введена несуществующая команда" + Colors.RESET);
-            else commandPattern.execute();
+            else {
+                CommandPattern commandPattern = commandPatternHashMap.get(split[0]);
+                if (commandPattern == null)
+                    System.out.println(Colors.YELLOW + "Введена несуществующая команда" + Colors.RESET);
+                else commandPattern.execute();
+            }
         }
     }
 

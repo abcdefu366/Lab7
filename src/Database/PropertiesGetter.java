@@ -20,7 +20,7 @@ public class PropertiesGetter {
     static {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("database.cfg"));
+            properties.load(new FileInputStream("db.cfg"));
             url = properties.getProperty("url");
             user = properties.getProperty("user");
             password = properties.getProperty("password");
