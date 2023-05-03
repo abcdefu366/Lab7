@@ -40,6 +40,7 @@ public class InsertAtCommand implements CommandPattern {
                         CreatorHumanBeing creatorHumanBeing = new CreatorHumanBeing(reader);
                         HumanBeing humanBeing = creatorHumanBeing.create();
                         HumanBeingCollection.getHumanBeings().add(index, humanBeing);
+                        HumanBeingCollection.addToDB(humanBeing);
                         System.out.println(Colors.BLUE + "Новый элемент добавлен на позицию под номером:" + Colors.RESET + " " + index);
                     }
                 }

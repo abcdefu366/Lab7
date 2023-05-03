@@ -28,9 +28,7 @@ public class AddCommand implements CommandPattern {
     @Override
     public void execute() {
         if (CommandEater.getIsProgramRunning() && CommandEater.getSplit().length == 1) {
-            CreatorHumanBeing creatorHumanBeing = new CreatorHumanBeing(reader);
-            HumanBeing humanBeing = creatorHumanBeing.create();
-            HumanBeingCollection.add(humanBeing);
+            HumanBeingCollection.addDB(new CreatorHumanBeing(reader).create());
             System.out.println(Colors.BLUE + "Новый объект был успешно добавлен в коллекцию" + Colors.RESET);
         }
         else {

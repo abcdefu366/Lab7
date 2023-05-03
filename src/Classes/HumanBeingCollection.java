@@ -71,4 +71,12 @@ public class HumanBeingCollection {
         humanBeings.clear();
         getFromDatabase();
     }
+    public static void addToDB(HumanBeing humanBeing) {
+        Connection.executeStatement("insert into human_beings (id, name, x, y, creation_date, real_hero, has_toothpick, impact_speed, weapon_type, mood, car, creator) values ('" + humanBeing.getId() + "', '" + humanBeing.getName() + "', '" + humanBeing.getCoordinates().getX() + "', '" + humanBeing.getCoordinates().getY() + "', '" + humanBeing.getCreationDate().toString() + "', '" + humanBeing.getRealHero() + "', '" + humanBeing.getHasToothpick() + "', '" + humanBeing.getImpactSpeed() + "', '" + humanBeing.getWeaponType() + "', '" + humanBeing.getMood() + "', '" + humanBeing.getCar().getCool() + "', '" + humanBeing.getUser() + "')");
+
+    }
+    public static void addDB(HumanBeing humanBeing) {
+        addToDB(humanBeing);
+        updateFromDB();
+    }
 }

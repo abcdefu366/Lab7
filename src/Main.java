@@ -1,8 +1,6 @@
 import Classes.*;
 import Commands.CommandEater;
 import Database.Authentication;
-import Database.Connection;
-
 import java.util.NoSuchElementException;
 
 /**
