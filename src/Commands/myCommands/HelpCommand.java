@@ -31,7 +31,7 @@ public class HelpCommand implements CommandPattern {
             System.out.println(Colors.CYAN + "print_field_ascending_impact_speed:" + Colors.RESET + " " + Colors.PURPLE + "вывести значения поля impactSpeed всех элементов в порядке возрастания" + Colors.RESET);
             System.out.println(Colors.CYAN + "print_field_descending_car:" + Colors.RESET + " " + Colors.PURPLE + "вывести значения поля car всех элементов в порядке убывания" + Colors.RESET);
             System.out.println();
-            System.out.println(Colors.CYAN + "В коллекции у элементов поля (доступные для редактирования) расположены в следующем порядке:" + Colors.RESET + "\n" + Colors.PURPLE + "1 - имя" + Colors.RESET);
+            System.out.println(Colors.CYAN + "В коллекции у элементов поля (доступные для редактирования) расположены в следующем порядке:" + Colors.RESET + "\n" + Colors.PURPLE + "1 - id" + Colors.RESET);
             System.out.println(Colors.PURPLE + "2 - имя" + Colors.RESET);
             System.out.println(Colors.PURPLE + "3 - координата по x" + Colors.RESET);
             System.out.println(Colors.PURPLE + "4 - координата по y" + Colors.RESET);

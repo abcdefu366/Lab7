@@ -161,7 +161,7 @@ public class HumanBeing {
                 Colors.WHITE + " WeaponType - " + Colors.RED + weaponType + "\n" +
                 Colors.WHITE + " Mood - " + Colors.RED + mood + "\n" +
                 Colors.WHITE + " Car - " + Colors.RED + car + "\n" +
-                Colors.WHITE + " User - " + Colors.RED + user + Colors.RESET);
+                Colors.WHITE + " User - " + Colors.RED + user + Colors.RESET + "\n");
     }
 
     /**

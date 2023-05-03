@@ -21,8 +21,8 @@ public class Authentication {
             if (Connection.executePreparedStatement("SELECT * FROM USERS WHERE login = '" + login + "'").next()) {
                 userLoggingIn(login, scanner);
             } else {
-                System.out.println("Пользователя с таким именем не существует, если хотите зарегистрироваться, введите 1, если выйти - нажмите любую клавишу");
-                if (scanner.nextLine().trim().equals("1")) userRegistration(login, scanner);
+                System.out.println("Пользователя с таким именем не существует, если хотите зарегистрироваться, введите Y, если выйти - нажмите любую клавишу");
+                if (scanner.nextLine().trim().equals("Y")) userRegistration(login, scanner);
             }
         } catch (SQLException | NullPointerException e) {
             System.out.println(e.getMessage());

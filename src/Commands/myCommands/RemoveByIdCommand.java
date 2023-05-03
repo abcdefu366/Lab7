@@ -5,6 +5,8 @@ import Classes.HumanBeing;
 import Classes.HumanBeingCollection;
 import Commands.CommandEater;
 import Commands.CommandPattern;
+import Database.Authentication;
+import Database.Connection;
 import myUtilities.allForReaders.Reader;
 
 /**
@@ -36,14 +38,15 @@ public class RemoveByIdCommand implements CommandPattern {
                     Boolean isHumanBeingDelete = false;
                     if (!HumanBeingCollection.getHumanBeings().isEmpty()) {
                         for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
-                            if (humanBeing.getId().equals(id)) {
-                                HumanBeingCollection.getHumanBeings().remove(humanBeing);
+                            if (humanBeing.getId().equals(id) && humanBeing.getUser().equals(Authentication.getCurrentUser())) {
+                                Connection.executeStatement("delete from human_beings where id = '" + humanBeing.getId() + "'");
+                                HumanBeingCollection.updateFromDB();
                                 isHumanBeingDelete = true;
                                 System.out.println(Colors.BLUE + "Элемент с Id:" + Colors.RESET + " " + id + " " + Colors.BLUE + "удалён из коллекции" + Colors.RESET);
                             }
                         }
                         if (!isHumanBeingDelete) {
-                            System.out.println(Colors.YELLOW + "Такой HumanBeing не найден в коллекции" + Colors.RESET);
+                            System.out.println(Colors.YELLOW + "Такой HumanBeing не найден в коллекции или Вы не являетесь его создателем" + Colors.RESET);
                         }
                     } else {
                         System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
