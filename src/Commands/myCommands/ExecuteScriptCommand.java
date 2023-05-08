@@ -1,12 +1,8 @@
 package Commands.myCommands;
 
 import Classes.Colors;
-import Commands.CommandEater;
-import Commands.CommandPattern;
-import myUtilities.allForReaders.NameOfReader;
-import myUtilities.allForReaders.Reader;
-import myUtilities.allForReaders.ReaderFromFile;
-import myUtilities.allForReaders.ReaderManager;
+import Commands.*;
+import myUtilities.allForReaders.*;
 
 
 /**

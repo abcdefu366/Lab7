@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * The type Human being.
@@ -118,7 +117,12 @@ public class HumanBeing {
      * @param weaponType the weapon type
      */
     public void setWeaponType(WeaponType weaponType) {
-        this.weaponType = weaponType;
+        if (weaponType == null) {
+            setWeaponType(WeaponType.PISTOL);
+        }
+        else {
+            this.weaponType = weaponType;
+        }
     }
 
     /**

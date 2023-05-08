@@ -1,13 +1,10 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeing;
-import Classes.HumanBeingCollection;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Classes.*;
+import Commands.*;
 
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * The type Print field descending car command.
@@ -20,12 +17,9 @@ public class PrintFieldDescendingCarCommand implements CommandPattern {
                 System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
             else {
-                LinkedList<HumanBeing> humanBeingLinkedList = new LinkedList<>(HumanBeingCollection.getHumanBeings());
-                Collections.sort(humanBeingLinkedList, new HumanBeing.SortByCar().reversed());
-                for (HumanBeing humanBeing : humanBeingLinkedList) {
-                    System.out.println(Colors.BLACK + humanBeing.getCar().getCool() + Colors.RESET);
-                }
-                humanBeingLinkedList.clear();
+                ArrayList<HumanBeing> humanBeingArrayList = (ArrayList<HumanBeing>) HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByCar().reversed()).collect(Collectors.toList());
+                humanBeingArrayList.forEach(humanBeing -> System.out.println(Colors.BLACK + humanBeing.getCar().getCool() + Colors.RESET));
+                humanBeingArrayList.clear();
             }
         }
         else {

@@ -1,8 +1,7 @@
 package Commands.myCommands;
 
 import Classes.*;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Commands.*;
 import myUtilities.CreatorHumanBeing;
 import myUtilities.allForReaders.Reader;
 

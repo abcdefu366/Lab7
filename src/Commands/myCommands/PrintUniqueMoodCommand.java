@@ -1,11 +1,7 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeing;
-import Classes.HumanBeingCollection;
-import Classes.Mood;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Classes.*;
+import Commands.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,12 +17,8 @@ public class PrintUniqueMoodCommand implements CommandPattern {
                 System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
             else {
-                for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
-                    set.add(humanBeing.getMood());
-                }
-                for (Mood mood : set) {
-                    System.out.println(Colors.BLACK + mood + Colors.RESET);
-                }
+                HumanBeingCollection.getHumanBeings().stream().map(HumanBeing::getMood).forEach(set::add);
+                set.stream().forEach(mood -> System.out.println(Colors.BLACK + mood + Colors.RESET));
                 set.clear();
             }
         }

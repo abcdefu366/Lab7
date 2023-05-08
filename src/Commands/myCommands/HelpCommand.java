@@ -1,10 +1,8 @@
 package Commands.myCommands;
 
 import Classes.Colors;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Commands.*;
 
-import java.sql.SQLOutput;
 
 /**
  * The type Help command.

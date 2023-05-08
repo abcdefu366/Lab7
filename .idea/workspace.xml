@@ -9,15 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="644be165-c202-418e-a337-184a8c78924b" name="Changes" comment="done + add/addIfMax/InsertAt">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba.xml" afterDir="false" />
+    <list default="true" id="644be165-c202-418e-a337-184a8c78924b" name="Changes" comment="clear, removeById, Update + help">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1822064e-7b51-4ed9-b310-7aa1a55101ba/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2131096d-bf95-44d4-b190-710f5d7097c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2131096d-bf95-44d4-b190-710f5d7097c6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2131096d-bf95-44d4-b190-710f5d7097c6/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2131096d-bf95-44d4-b190-710f5d7097c6/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/HumanBeing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/HumanBeing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/HumanBeingCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/AddIfMaxCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ExitCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/InsertAtCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/InsertAtCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/PrintFieldAscendingImpactSpeedCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/PrintFieldAscendingImpactSpeedCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/PrintFieldDescendingCarCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/PrintFieldDescendingCarCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/PrintUniqueMoodCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/PrintUniqueMoodCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/SortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/SortCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands/myCommands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/myCommands/UpdateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Authentication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +116,13 @@
       <workItem from="1683110189910" duration="797000" />
       <workItem from="1683111097071" duration="1376000" />
       <workItem from="1683113142688" duration="5184000" />
-      <workItem from="1683136653554" duration="1044000" />
+      <workItem from="1683136653554" duration="2609000" />
+      <workItem from="1683157921975" duration="45000" />
+      <workItem from="1683195098193" duration="1090000" />
+      <workItem from="1683200093146" duration="102000" />
+      <workItem from="1683203838074" duration="12962000" />
+      <workItem from="1683222626027" duration="442000" />
+      <workItem from="1683503185623" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1682714292966</created>
@@ -122,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683073357752</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="clear, removeById, Update + help">
+      <created>1683145109913</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683145109913</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done" />
     <MESSAGE value="done + add/addIfMax/InsertAt" />
-    <option name="LAST_COMMIT_MESSAGE" value="done + add/addIfMax/InsertAt" />
+    <MESSAGE value="clear, removeById, Update + help" />
+    <option name="LAST_COMMIT_MESSAGE" value="clear, removeById, Update + help" />
   </component>
 </project>

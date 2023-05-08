@@ -1,8 +1,7 @@
 package Commands.myCommands;
 
 import Classes.*;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Commands.*;
 import myUtilities.CreatorHumanBeing;
 import myUtilities.allForReaders.Reader;
 import java.util.LinkedList;
@@ -45,73 +44,53 @@ public class AddIfMaxCommand implements CommandPattern {
                         System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                     } else {
                         if (parameter.equals(1)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortById());
-                            if (humanBeingLinkedList.peekLast().getId() < humanBeing.getId()) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getId() > humanBeing.getId()).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(2)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByName());
-                            if (humanBeingLinkedList.peekLast().getName().compareTo(humanBeing.getName()) < 0) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getName().compareTo(humanBeing.getName()) < 0).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(3)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByX_Coordinate());
-                            if (humanBeingLinkedList.peekLast().getCoordinates().getX() < humanBeing.getCoordinates().getX()) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getCoordinates().getX() > humanBeing.getCoordinates().getX()).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(4)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByY_Coordinate());
-                            if (humanBeingLinkedList.peekLast().getCoordinates().getY() < humanBeing.getCoordinates().getY()) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getCoordinates().getY() > humanBeing.getCoordinates().getY()).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(5)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByRealHero());
-                            if (humanBeing.getRealHero() || !(humanBeing.getRealHero() && humanBeingLinkedList.peekLast().getRealHero())) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getRealHero().compareTo(humanBeing.getRealHero()) >= 0).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(6)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByHasToothpick());
-                            if (humanBeing.getHasToothpick() || !(humanBeing.getHasToothpick() && humanBeingLinkedList.peekLast().getHasToothpick())) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getHasToothpick().compareTo(humanBeing.getHasToothpick()) >= 0).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(7)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByImpactSpeed());
-                            if (humanBeingLinkedList.peekLast().getImpactSpeed() < humanBeing.getImpactSpeed()) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getImpactSpeed() > humanBeing.getImpactSpeed()).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(8)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByWeaponType());
-                            if ((humanBeing.getWeaponType().equals(WeaponType.KNIFE)) || (humanBeingLinkedList.peekLast().getWeaponType().equals(WeaponType.MACHINE_GUN) && humanBeing.getWeaponType().equals(WeaponType.KNIFE)) || (humanBeingLinkedList.peekLast().getWeaponType().equals(WeaponType.PISTOL) && (humanBeing.getWeaponType().equals(WeaponType.KNIFE) || humanBeing.getWeaponType().equals(WeaponType.MACHINE_GUN)))) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getWeaponType().compareTo(humanBeing.getWeaponType()) >= 0).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(9)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByMood());
-                            if ((humanBeing.getMood().equals(Mood.LONGING)) || (humanBeingLinkedList.peekLast().getMood().equals(Mood.SADNESS) && humanBeing.getMood().equals(Mood.LONGING)) || (humanBeingLinkedList.peekLast().getMood().equals(Mood.SORROW) && (humanBeing.getMood().equals(Mood.LONGING) || humanBeing.getMood().equals(Mood.SADNESS)))) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getMood().compareTo(humanBeing.getMood()) >= 0).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                         if (parameter.equals(10)) {
-                            humanBeingLinkedList.sort(new HumanBeing.SortByCar());
-                            if (humanBeing.getCar().getCool() || !(humanBeing.getCar().getCool() && humanBeingLinkedList.peekLast().getCar().getCool())) {
+                            if (humanBeingLinkedList.stream().filter(human -> human.getCar().getCool().compareTo(humanBeing.getCar().getCool()) >= 0).toArray().length == 0) {
                                 HumanBeingCollection.addDB(humanBeing);
-                                System.out.println(Colors.BLUE + "Элемент добавлен в основную коллекцию" + Colors.RESET);
                             }
                         }
                     }

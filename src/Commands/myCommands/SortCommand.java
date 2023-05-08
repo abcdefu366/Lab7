@@ -1,13 +1,8 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeing;
-import Classes.HumanBeingCollection;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Classes.*;
+import Commands.*;
 
-import javax.crypto.Cipher;
-import java.util.Collections;
 
 /**
  * The type Sort command.
@@ -31,37 +26,37 @@ public class SortCommand implements CommandPattern {
                     System.out.println(Colors.YELLOW + "Введён некорректный параметр сортировки" + Colors.RESET);;
                 }
                 else {
+                    System.out.println(Colors.BLUE + "Отсортированная коллекция" + Colors.RESET);
                     if (parameter.equals(1)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortById());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortById()).forEach(System.out::println);
                     }
                     if (parameter.equals(2)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByName());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByName()).forEach(System.out::println);
                     }
                     if (parameter.equals(3)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByX_Coordinate());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByX_Coordinate()).forEach(System.out::println);
                     }
                     if (parameter.equals(4)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByY_Coordinate());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByY_Coordinate()).forEach(System.out::println);
                     }
                     if (parameter.equals(5)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByRealHero());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByRealHero()).forEach(System.out::println);
                     }
                     if (parameter.equals(6)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByHasToothpick());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByHasToothpick()).forEach(System.out::println);
                     }
                     if (parameter.equals(7)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByImpactSpeed());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByImpactSpeed()).forEach(System.out::println);
                     }
                     if (parameter.equals(8)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByWeaponType());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByWeaponType()).forEach(System.out::println);
                     }
                     if (parameter.equals(9)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByMood());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByWeaponType()).forEach(System.out::println);
                     }
                     if (parameter.equals(10)) {
-                        Collections.sort(HumanBeingCollection.getHumanBeings(), new HumanBeing.SortByCar());
+                        HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByCar()).forEach(System.out::println);
                     }
-                    System.out.println(Colors.BLUE + "Коллекция успешно отсортирована" + Colors.RESET);
                 }
             }
         }

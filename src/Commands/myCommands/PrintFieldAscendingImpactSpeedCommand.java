@@ -1,13 +1,10 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeing;
-import Classes.HumanBeingCollection;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Classes.*;
+import Commands.*;
 
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * The type Print field ascending impact speed command.
@@ -20,12 +17,9 @@ public class PrintFieldAscendingImpactSpeedCommand implements CommandPattern {
                 System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
             else {
-                LinkedList<HumanBeing> humanBeingLinkedList = new LinkedList<>(HumanBeingCollection.getHumanBeings());
-                Collections.sort(humanBeingLinkedList, new HumanBeing.SortByImpactSpeed());
-                for (HumanBeing humanBeing : humanBeingLinkedList) {
-                    System.out.println(Colors.BLACK + humanBeing.getImpactSpeed() + Colors.RESET);
-                }
-                humanBeingLinkedList.clear();
+                ArrayList<HumanBeing> humanBeingArrayList = (ArrayList<HumanBeing>) HumanBeingCollection.getHumanBeings().stream().sorted(new HumanBeing.SortByImpactSpeed()).collect(Collectors.toList());
+                humanBeingArrayList.stream().map(HumanBeing::getImpactSpeed).forEach(speed -> System.out.println(Colors.BLACK + speed + Colors.RESET));
+                humanBeingArrayList.clear();
             }
         }
         else {

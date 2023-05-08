@@ -1,10 +1,7 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeing;
-import Classes.HumanBeingCollection;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Classes.*;
+import Commands.*;
 
 /**
  * The type Show command.
@@ -17,9 +14,7 @@ public class ShowCommand implements CommandPattern {
                 System.out.println(Colors.YELLOW + "Коллекция не содержит данных" + Colors.RESET);
             }
             else {
-                for (HumanBeing humanBeing : HumanBeingCollection.getHumanBeings()) {
-                    System.out.println(humanBeing);
-                }
+                HumanBeingCollection.getHumanBeings().forEach(System.out::println);
             }
         }
         else {

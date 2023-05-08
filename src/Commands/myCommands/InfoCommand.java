@@ -1,9 +1,7 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeingCollection;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Classes.*;
+import Commands.*;
 
 /**
  * The type Info command.

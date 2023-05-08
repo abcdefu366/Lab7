@@ -1,8 +1,7 @@
 package Commands.myCommands;
 
 import Classes.Colors;
-import Commands.CommandEater;
-import Commands.CommandPattern;
+import Commands.*;
 
 /**
  * The type Exit command.

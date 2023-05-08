@@ -55,6 +55,7 @@ public class HumanBeingCollection {
                     String weaponTypeString = resultSet.getString(9);
                     WeaponType weaponType = null;
                     if (!weaponTypeString.equals("null")) weaponType = WeaponType.valueOf(weaponTypeString);
+                    else weaponType = WeaponType.PISTOL;
                     String moodString = resultSet.getString(10);
                     Mood mood = Mood.valueOf(moodString);
                     if (moodString.equals("null")) throw new IllegalArgumentException();

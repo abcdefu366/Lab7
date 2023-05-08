@@ -1,11 +1,8 @@
 package Commands.myCommands;
 
-import Classes.Colors;
-import Classes.HumanBeingCollection;
-import Commands.CommandEater;
-import Commands.CommandPattern;
-import Database.Authentication;
-import Database.Connection;
+import Classes.*;
+import Commands.*;
+import Database.*;
 
 /**
  * The type Clear command.
